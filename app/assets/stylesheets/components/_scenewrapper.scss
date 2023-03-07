@@ -1,0 +1,14 @@
+.scene-wrapper {
+  position:relative;
+  height: 180px;
+  width: 50%;
+}
+
+.scene-wrapper i {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+}
