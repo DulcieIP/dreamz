@@ -52,7 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_111629) do
 
   create_table "scenes", force: :cascade do |t|
     t.bigint "dream_id", null: false
-    t.string "image_url"
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
