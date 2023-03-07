@@ -7,7 +7,7 @@ class DreamsController < ApplicationController
     @dream = Dream.new(dream_params)
     @dream.user = current_user
     if @dream.save
-      redirect_to dream_scenes_path
+      redirect_to dream_scenes_path(@dream)
     else
       render :new, status: :unprocessable_entity, alert: "Please try again"
     end
