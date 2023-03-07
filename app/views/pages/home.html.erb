@@ -1,6 +1,8 @@
 
 <div class="spectrum-background">
-  <h1>Welcome to Dreamz</h1>
-  <p>Would you like to tell me your dream?</p>
-  <%= link_to "Go to Dreamboard", dreamboard_path %>
+    <h1>Welcome to Dreamz</h1>
+  <div class="container" style="text-align: center;">
+    <p><%=link_to "Would you like to tell me your dream?", new_dream_path%></p>
+    <%= link_to "Go to Dreamboard", dreamboard_path %>
+  </div>
 </div>
