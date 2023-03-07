@@ -1,0 +1,10 @@
+<h1>I have a dream</h1>
+
+<%= simple_form_for(@dream) do |f| %>
+  <%= f.input :content %>
+  <%=# input optionnels ci-dessous %>
+  <%=# f.input :mood %>
+  <%=# f.input :character %>
+  <%=# f.input :location %>
+  <%= f.submit %>
+<% end %>
