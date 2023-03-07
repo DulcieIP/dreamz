@@ -1,0 +1,8 @@
+<h1> my scenes </h1>
+<% @scenes.each do |scene| %>
+  <div class="scene-wrapper">
+    <img src="<%= scene.image_url %>", style="height:180px; width: 180px; object-fit:cover;">
+    <i class="fa-regular fa-circle-check"></i>
+    <i class="fa-solid fa-circle-check"></i>
+</div>
+<% end %>
