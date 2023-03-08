@@ -1,6 +1,26 @@
 // Specific CSS for your home-page
 .spectrum-background {
-  background: rgb(49,49,209);
-  background: linear-gradient(180deg, rgba(49,49,209,1) 10%, rgba(0,212,255,0.8632046568627451) 34%, rgba(232,180,162,0.7007396708683473) 65%, rgba(148,79,150,0.6951374299719888) 89%);
+  background: linear-gradient(186deg, #132867, #28a3aa, #ecb0ac, #e6ca2b);
+  background-size: 800% 800%;
   height: 100vh;
+  -webkit-animation: AnimationName 48s ease infinite;
+  -moz-animation: AnimationName 48s ease infinite;
+  animation: AnimationName 48s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:100% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:100% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:100% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:100% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:100% 0%}
+  50%{background-position:0% 100%}
+  100%{background-position:100% 0%}
+
 }
