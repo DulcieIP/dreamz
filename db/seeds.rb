@@ -50,7 +50,7 @@ wagon_scene1.image.attach(io: file, filename: "wagon_scene1.png", content_type: 
 wagon_scene1.save!
 
 desert_scene1 = Scene.new(
-  dream: wagon,
+  dream: desert,
   content: "In the middle of the desert at night. I reach the edge of a dune and discover a red moon.",
 )
 url = "https://res.cloudinary.com/dblvbc7iu/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1678189977/DALL_E_2023-03-07_12.52.10_-_Painting._In_the_middle_of_the_desert_at_night._I_reach_the_edge_of_a_dune_and_discover_a_red_coloredmoon_The_i_walk_to_the_moon_and_catch_it._j3i3xc.jpg"
@@ -59,7 +59,7 @@ desert_scene1.image.attach(io: file, filename: "desert_scene1.png", content_type
 desert_scene1.save!
 
 desert_scene2 = Scene.new(
-  dream: wagon,
+  dream: desert,
   content: "Then i walk to the moon and catch it."
 )
 url = "https://res.cloudinary.com/dblvbc7iu/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1678191266/DALL_E_2023-03-07_13.14.14_-_painting_I_catch_the_red_moon_zmeftg.jpg"
