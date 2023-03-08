@@ -1,10 +1,14 @@
 <div class="container">
   <h1> My scenes </h1>
 
-  <div class="row">
     <%= simple_form_for(@dream, url: filtered_scene_dream_path(@dream), method: :patch) do |f|%>
-      <%= f.input :scenes, collection: @scenes, as: :check_boxes, label_method: lambda { |b| cl_image_tag(b.image.key) }%>
+      <%= f.input :scenes, collection: @scenes, as: :check_boxes,
+          collection_wrapper_tag: 'div',
+          collection_wrapper_class: 'scene-wrapper',
+          item_wrapper_class: 'scene-item',
+          input_html: {class: 'scene-selector'},
+          label_method: lambda { |b| cl_image_tag(b.image.key) } %>
       <%= f.submit %>
     <% end %>
-  </div>
+
 </div>
