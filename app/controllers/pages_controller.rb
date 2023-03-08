@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def dreamboard
-    
+    @dreams = Dream.all
   end
 end

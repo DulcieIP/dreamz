@@ -1,1 +1,23 @@
-<h1>Coucou</h1>
+<div class="container mt-5">
+  <div class="cards">
+    <% @dreams.each do |dream| %>
+      <% if dream.user == current_user %>
+        <div class="wrapper-card-trip-index">
+          <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+            <div class="card-trip-index">
+              <% if dream.scenes.first.image.attached? %>
+                <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
+              <% end %>
+
+              <div class="card-trip-infos-index">
+                  <h2> <%= "#{dream.content}" %></h2>
+              </div>
+
+            </div>
+
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
