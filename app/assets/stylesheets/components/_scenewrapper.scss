@@ -1,14 +1,20 @@
 .scene-wrapper {
   position:relative;
-  height: 180px;
-  width: 50%;
+  height: 254px;
+  width: 100%;
 }
 
-.scene-wrapper i {
+
+.scene-selector {
   position: absolute;
-  right: 25px;
-  top: 10px;
-  font-size: 25px;
+  transform: scale(0);
+}
+
+.scene-selector + label {
   cursor: pointer;
-  color: white;
+  border: 5px solid #afafaf;
+}
+
+.scene-selector:checked + label {
+  border: 5px solid #73ff88;
 }

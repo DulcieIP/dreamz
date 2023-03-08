@@ -6,7 +6,7 @@
           collection_wrapper_tag: 'div',
           collection_wrapper_class: 'scene-wrapper',
           item_wrapper_class: 'scene-item',
-          input_html: {class: 'scene-selector'},
+          input_html: {class: 'scene-selector d-none'},
           label_method: lambda { |b| cl_image_tag(b.image.key) } %>
       <%= f.submit %>
     <% end %>
