@@ -3,7 +3,7 @@
 
   <div class="row">
     <%= simple_form_for(@dream, url: filtered_scene_dream_path(@dream), method: :patch) do |f|%>
-      <%= f.input :scenes, collection: @scenes, as: :check_boxes %>
+      <%= f.input :scenes, collection: @scenes, as: :check_boxes, label_method: lambda { |b| cl_image_tag(b.image.key) }%>
       <%= f.submit %>
     <% end %>
   </div>

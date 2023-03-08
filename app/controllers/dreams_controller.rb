@@ -11,7 +11,7 @@ class DreamsController < ApplicationController
     @rejected_scenes.each do |scene|
       scene.destroy
     end
-    raise
+    redirect_to dreamboard_path
   end
 
   def new
