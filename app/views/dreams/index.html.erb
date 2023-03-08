@@ -1,0 +1,4 @@
+<h1>My profile</h1>
+<% @dreams.each do |dream| %>
+  <%= cl_image_tag dream.image.key, class:"w-100 h-100", height:600, width:600, crop: :fill %>
+<% end %>
