@@ -1,14 +1,18 @@
 .scene-wrapper {
   position:relative;
-  height: 180px;
-  width: 50%;
 }
 
-.scene-wrapper i {
-  position: absolute;
-  right: 25px;
-  top: 10px;
-  font-size: 25px;
+.scene-selector + label {
   cursor: pointer;
-  color: white;
+  border: 10px solid #afafaf;
+}
+
+.scene-selector:checked + label {
+  border: 10px solid #73ff88;
+}
+
+label.collection_check_boxes {
+  img {
+    width: 100%;
+  }
 }
