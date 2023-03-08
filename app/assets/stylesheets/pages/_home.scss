@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+.spectrum-background {
+  background:
+      linear-gradient(red, transparent),
+      linear-gradient(to top left, lime, transparent),
+      linear-gradient(to top right, blue, transparent);
+  background-blend-mode: screen;
+  height: 100vh;
+}
