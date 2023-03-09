@@ -4,3 +4,6 @@
 
 import { application } from "./application"
 
+import HiddenloadingController from "./hiddenloading_controller"
+application.register("hiddenloading", HiddenloadingController)
+
