@@ -1,4 +1,22 @@
 // Specific CSS for your home-page
+
+h1 {
+  color: white;
+}
+
+.container-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bas-de-link {
+ position: absolute;
+ bottom: 10px;
+}
+
 .spectrum-background {
   background: linear-gradient(186deg, #132867, #28a3aa, #ecb0ac, #e6ca2b);
   background-size: 800% 800%;
