@@ -43,7 +43,7 @@ class DreamsController < ApplicationController
     request = client.chat(
       parameters: {
           model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: "if you can, split this text in paragraph without adding any word to it. if you can't just re-write the text without ant change: '#{prompt}' ", }],
+          messages: [{ role: "user", content: "if you can, split this text in paragraph without adding any word to it. if you can't just re-write the text without any change: '#{prompt}' ", }],
           temperature: 0
       }
     )
