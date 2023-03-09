@@ -7,8 +7,10 @@
           collection_wrapper_class: 'scene-wrapper',
           item_wrapper_class: 'scene-item',
           input_html: {class: 'scene-selector d-none'},
-          label_method: lambda { |b| cl_image_tag(b.image.key) } %>
-      <%= f.submit "Save my dream" %>
+          label_method: lambda { |b| "<i class='fa-regular fa-circle-check'></i>".html_safe + cl_image_tag(b.image.key) } %>
+      <%= f.submit "Save my dream", class: 'btn btn-primary' %>
     <% end %>
 
 </div>
+
+

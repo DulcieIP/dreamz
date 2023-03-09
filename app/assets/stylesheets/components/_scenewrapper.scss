@@ -16,3 +16,17 @@ label.collection_check_boxes {
     width: 100%;
   }
 }
+
+
+.scene-wrapper label {
+  position: relative;
+}
+
+.scene-wrapper label i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  padding: 5px;
+  font-size: larger;
+}
