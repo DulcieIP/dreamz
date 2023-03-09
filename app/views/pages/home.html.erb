@@ -2,5 +2,9 @@
 <div class="container container-home">
     <h1><div class="animated logo">Dreamer</div></h1>
     <%=link_to "Tell me your dream", new_dream_path%>
-    <%= link_to "Go to Dreamboard", dreamboard_path, class: "bas-de-link" %>
+    <%=link_to dreamboard_path do %>
+      <i class="fa-solid fa-book-open bas-de-link"></i>
+    <% end %>
+
+
 </div>
