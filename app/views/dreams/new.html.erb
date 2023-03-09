@@ -1,21 +1,14 @@
-<h1>I have a dream</h1>
-<div data-controller="hiddenloading">
-  <div data-hiddenloading-target="form">
-    <%= simple_form_for(@dream, html:{data: { action: "submit->hiddenloading#show" }}) do |f| %>
-      <%= f.input :content %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-
-<<<<<<< HEAD
-
 <div class="container">
-  <div class="container-form">
+  <div class="container-form align-items-center d-flex flex-column justify-content-center">
     <h3>Tell me your dream</h3>
-    <i class="fa-solid fa-circle-info"></i>
-    <%= simple_form_for(@dream) do |f| %>
-    <%= f.input :content, as: :text, label: false %>
-    <%= f.button :submit, class: "" %>
+    <%= simple_form_for @dream, html: { class: "w-100" } do |f| %>
+      <div class="position-relative">
+        <%= f.input :content, as: :text, label: false %>
+        <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"></i>
+      </div>
+      <button type="submit" name="commit" class="btn btn-primary w-100" data-disable-with="Create Dream">
+        <i class="fa-regular fa-moon"></i>
+      </button>
     <% end %>
   </div>
 </div>
@@ -27,14 +20,14 @@
  # f.input :location %>
 
 
-<i class="fa-regular fa-d"></i>
+
 
  <%=link_to dreamboard_path do %>
-      <i class="icon-dreamboard fa-solid fa-brain bas-de-link"></i>
+      <i class="icon-dreamboard fa-regular fa-d bas-de-link"></i>
     <% end %>
-=======
-  <div class="hiddenloading d-none" data-hiddenloading-target="loading">
+
+    
+  <%# <div class="hiddenloading d-none" data-hiddenloading-target="loading">
     <img src="https://img.icons8.com/ios/1x/loading-infinity.gif">
   </div>
-</div>
->>>>>>> master
+</div> %>
