@@ -1,18 +1,49 @@
 .scene-wrapper {
   position:relative;
+  padding:0px;
 }
 
 .scene-selector + label {
   cursor: pointer;
-  border: 10px solid #afafaf;
+  border: 2px solid #ffffff;
 }
 
 .scene-selector:checked + label {
-  border: 10px solid #73ff88;
+  border: 2px solid #73ff88;
+}
+
+.scene-selector:checked + label i {
+  color: #73ff88;
 }
 
 label.collection_check_boxes {
   img {
     width: 100%;
   }
+}
+
+.scene-wrapper label {
+  position: relative;
+}
+
+.scene-wrapper label i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  font-size: 25px;
+}
+
+.scene-item label {
+  width: 100%;
+  border-radius : 5px;
+}
+
+.scene-item label img {
+  border-radius : 5px;
+}
+
+.scene-item {
+  padding: 5px;
 }
