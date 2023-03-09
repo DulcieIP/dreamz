@@ -1,9 +1,12 @@
-<h1>I have a dream</h1>
 
-<%= simple_form_for(@dream) do |f| %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container container-home">
+
+  <%= simple_form_for(@dream) do |f| %>
+  <%= f.input :content, label: false %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>
 
 <%#
  # input optionnels ci-dessous
