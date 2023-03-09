@@ -1,11 +1,14 @@
 
 
-<div class="container container-home">
-
-  <%= simple_form_for(@dream) do |f| %>
-  <%= f.input :content, label: false %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
+<div class="container">
+  <div class="container-form">
+    <h3>Tell me your dream</h3>
+    <i class="fa-solid fa-circle-info"></i>
+    <%= simple_form_for(@dream) do |f| %>
+    <%= f.input :content, as: :text, label: false %>
+    <%= f.button :submit, class: "" %>
+    <% end %>
+  </div>
 </div>
 
 <%#
@@ -13,3 +16,10 @@
  # f.input :mood
  # f.input :character
  # f.input :location %>
+
+
+<i class="fa-regular fa-d"></i>
+
+ <%=link_to dreamboard_path do %>
+      <i class="icon-dreamboard fa-solid fa-brain bas-de-link"></i>
+    <% end %>
