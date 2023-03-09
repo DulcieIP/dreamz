@@ -11,6 +11,10 @@ class DreamsController < ApplicationController
     @rejected_scenes.each do |scene|
       scene.destroy
     end
+    # détruit le rève s'il n'y a aucune scène rattachée
+    # c'est ça qui casse le dashboard.
+    @dream.destroy unless @dream.scenes?
+
     redirect_to dreamboard_path
   end
 
@@ -33,7 +37,6 @@ class DreamsController < ApplicationController
   def show
     @dream = Dream.find(params[:id])
   end
-
 
   private
 
