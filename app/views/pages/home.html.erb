@@ -1,10 +1,13 @@
 
 <div class="container container-home">
-    <h1><div class="animated logo">Dreamer</div></h1>
+  <div>
+    <h1>Dreamer</h1>
     <%=link_to "Tell me your dream", new_dream_path%>
-    <%=link_to dreamboard_path do %>
-      <i class="fa-solid fa-book-open bas-de-link"></i>
+    <div>
+      <%=link_to dreamboard_path do %>
+      <i class="icon-dreamboard fa-solid fa-brain bas-de-link"></i>
     <% end %>
-
-
+    </div>
+  </div>
 </div>
+
