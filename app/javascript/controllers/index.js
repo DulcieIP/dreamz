@@ -4,8 +4,3 @@
 
 import { application } from "./application"
 
-import CheckedIconController from "./checked_icon_controller"
-application.register("checked-icon", CheckedIconController)
-
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)

@@ -60,6 +60,14 @@
   border-radius: 10px
 }
 
+.slides_text {
+  margin-top: 5vh;
+  padding: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
 
 
 // .slides__button {

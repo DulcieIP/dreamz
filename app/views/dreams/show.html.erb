@@ -1,29 +1,37 @@
-<div class="slides" data-slides-target="container" data-action="keydown@window->slides#keydown click->slides#hide">
-  <%# <button class="slides__button slides__button--close" data-action="click->slides#hide">
-  </button>
-
-  <button class="slides__button slides__button--prev is-hidden" data-action="click->slides#prev" data-slides-target="prev">
+<div class="container container-home">
+  <div class="slides" data-slides-target="container" data-action="keydown@window->slides#keydown click->slides#hide">
+    <%# <button class="slides__button slides__button--close" data-action="click->slides#hide">
     </button>
 
-  <button class="slides__button slides__button--next" data-action="click->slides#next" data-slides-target="next">
-  </button> %>
+    <button class="slides__button slides__button--prev is-hidden" data-action="click->slides#prev" data-slides-target="prev">
+      </button>
 
-  <div class="slides__content" data-slides-target="content" data-action="scroll->slides#scroll">
+    <button class="slides__button slides__button--next" data-action="click->slides#next" data-slides-target="next">
+    </button> %>
 
-    <% @data_index = 0 %>
-    <% @dream.scenes.each do |scene| %>
-      <%= "#{@data_index}" %>
-      <div class="slides__slide" data-slides-target="slide" data-index=<%= "#{@data_index}" %> >
-        <div class="slides__slide__image painting painting--no-background" data-controller="painting">
-          <%= cl_image_tag scene.image.key%>
+    <div class="slides__content" data-slides-target="content" data-action="scroll->slides#scroll">
+      <% @dream.scenes.each do |scene| %>
+        <div class="slides__slide" data-slides-target="slide">
+          <div class="slides__slide__image painting painting--no-background" data-controller="painting">
+            <% if scene.image.attached? %>
+              <%= cl_image_tag scene.image.key, crop: :fill %>
+            <% end %>
+          </div>
+          
+          <div class="slides_text">
+            <% if scene.content? %>
+              <%= "#{scene.content}" %>
+            <% end %>
+          </div>
+
         </div>
-      </div>
+      <% end %>
+    </div>
+
+    <%= link_to dreamboard_path do %>
+      <i class="fa-solid fa-book-open bas-de-link"></i>
     <% end %>
+
+
   </div>
-
-<%= link_to dreamboard_path do %>
-  <i class="fa-solid fa-book-open bas-de-link btn btn-ghost"></i>
-<% end %>
-
-
 </div>
