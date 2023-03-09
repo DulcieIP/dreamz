@@ -1,23 +1,34 @@
-<div class="container mt-5">
-  <div class="cards">
-    <% @dreams.each do |dream| %>
-      <% if dream.user == current_user %>
-        <div class="wrapper-card-trip-index">
-          <%= link_to dream_path(dream), class:"text-decoration-none" do %>
-            <div class="card-trip-index">
-              <% if dream.scenes.first.image.attached? %>
-                <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
-              <% end %>
+<div class="container container-home">
+  <div class="slides" data-slides-target="container" data-action="keydown@window->slides#keydown click->slides#hide">
 
-              <div class="card-trip-infos-index">
-                  <h2> <%= "#{dream.content}" %></h2>
+    <div class="slides__content" data-slides-target="content" data-action="scroll->slides#scroll">
+      <% @dreams.each do |dream| %>
+        <% if dream.user == current_user %>
+            <div class="slides__slide" data-slides-target="slide" data-index=<%= "#{@data_index}" %> >
+          <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+
+              <div class="slides__slide__image painting painting--no-background" data-controller="painting">
+                <% if dream.scenes.first.image.attached? %>
+                  <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
+                <% end %>
+              </div>
+
+              <div class="slides_text">
+                <% if dream.content? %>
+                  <%= dream.content %>
+                <% end %>
               </div>
 
             </div>
-
           <% end %>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+
+  <%= link_to dreamboard_path do %>
+    <i class="fa-solid fa-book-open bas-de-link"> créer un nouveau rêve</i>
+  <% end %>
+
+
   </div>
 </div>
