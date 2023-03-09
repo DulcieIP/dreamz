@@ -1,0 +1,23 @@
+<div class="slides" data-slides-target="container" data-action="keydown@window->slides#keydown click->slides#hide">
+  <%# <button class="slides__button slides__button--close" data-action="click->slides#hide">
+  </button>
+
+  <button class="slides__button slides__button--prev is-hidden" data-action="click->slides#prev" data-slides-target="prev">
+    </button>
+
+  <button class="slides__button slides__button--next" data-action="click->slides#next" data-slides-target="next">
+  </button> %>
+
+  <div class="slides__content" data-slides-target="content" data-action="scroll->slides#scroll">
+
+    <% @data_index = 0 %>
+    <% @dream.scenes.each do |scene| %>
+      <%= "#{@data_index}" %>
+      <div class="slides__slide" data-slides-target="slide" data-index=<%= "#{@data_index}" %> >
+        <div class="slides__slide__image painting painting--no-background" data-controller="painting">
+          <%= cl_image_tag scene.image.key%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
