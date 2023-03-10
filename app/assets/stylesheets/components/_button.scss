@@ -147,3 +147,20 @@
   display: block;
   margin-left: auto;
   margin-right: auto }
+
+
+.btn-start {
+  color: #6f00ff;
+  border: 1px solid #6f00ff;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-start:hover {
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid #fffffffb;
+}
