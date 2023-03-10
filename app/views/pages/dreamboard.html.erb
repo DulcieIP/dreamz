@@ -1,7 +1,9 @@
-<div class="container container-dreamboard">
-  <div>
+<div class="container">
+  <i class="fancy-text fa-solid fa-plus"></i>
+  <%= link_to "Post a new dream", dreamboard_path, class:"fancy-text" %>
+</div>
 
-    <div>
+<div class="container container-dreamboard">
       <% @dreams.each do |dream| %>
         <% if dream.user == current_user %>
           <% if dream.scenes.first && dream.scenes.first.image.attached? %>
@@ -20,13 +22,4 @@
           <% end %>
         <% end %>
       <% end %>
-
-      <%= link_to root_path do %>
-        <i class="fa-solid fa-book-open bas-de-link"></i>
-      <% end %>
-    </div>
-
-
-
-  </div>
 </div>
