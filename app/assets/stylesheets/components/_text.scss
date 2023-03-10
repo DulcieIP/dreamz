@@ -20,6 +20,7 @@ a {
   color: #d2189c;
   text-decoration: none;
   background-color: transparent;
+}
 
 @mixin fancy-text($gradient) {
   @keyframes fancy {
