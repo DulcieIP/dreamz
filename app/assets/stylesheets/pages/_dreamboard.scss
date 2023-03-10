@@ -16,7 +16,7 @@
 // }
 
 .card-background {
-  background-color: rgba(0,0,0,0.2)!important
+  background-color: rgba(0,0,0,0.4)!important
 }
 
 .cards_image img{
@@ -25,7 +25,7 @@
   -o-object-fit: contain;
   object-fit: contain;
   color: transparent;
-  border-radius: 10px
+  border-radius: 5px
 }
 
 .cards-filter {
@@ -34,6 +34,7 @@
   -webkit-line-clamp: 5;
   overflow: hidden;
   padding: 15px;
+  color: white;
 }
 
 
