@@ -1,37 +1,41 @@
-<div class="container container-home">
-  <div class="slides" data-slides-target="container" data-action="keydown@window->slides#keydown click->slides#hide">
-    <%# <button class="slides__button slides__button--close" data-action="click->slides#hide">
-    </button>
+<div class="container" >
+<i class="fancy-text fa-solid fa-arrow-left"></i>
+<%= link_to "Go back", dreamboard_path, class:"fancy-text" %>
+<h1 class="fancy-text center">My dream</h1>
+</div>
 
-    <button class="slides__button slides__button--prev is-hidden" data-action="click->slides#prev" data-slides-target="prev">
+<div class="dream-card">
+  <div class="container container-home">
+    <div class="slides" data-slides-target="container" data-action="keydown@window->slides#keydown click->slides#hide">
+      <%# <button class="slides__button slides__button--close" data-action="click->slides#hide">
       </button>
 
-    <button class="slides__button slides__button--next" data-action="click->slides#next" data-slides-target="next">
-    </button> %>
+      <button class="slides__button slides__button--prev is-hidden" data-action="click->slides#prev" data-slides-target="prev">
+        </button>
 
-    <div class="slides__content" data-slides-target="content" data-action="scroll->slides#scroll">
-      <% @dream.scenes.each do |scene| %>
-        <div class="slides__slide" data-slides-target="slide">
-          <div class="slides__slide__image painting painting--no-background" data-controller="painting">
-            <% if scene.image.attached? %>
-              <%= cl_image_tag scene.image.key, crop: :fill %>
-            <% end %>
-          </div>
-          
-          <div class="slides_text">
-            <% if scene.content? %>
-              <%= "#{scene.content}" %>
-            <% end %>
-          </div>
+      <button class="slides__button slides__button--next" data-action="click->slides#next" data-slides-target="next">
+      </button> %>
+      <div class="slides__content mt-5" data-slides-target="content" data-action="scroll->slides#scroll">
+        <% @dream.scenes.each do |scene| %>
+          <div class="slides__slide" data-slides-target="slide">
+            <div class="slides__slide__image painting painting--no-background" data-controller="painting">
+              <% if scene.image.attached? %>
+                <%= cl_image_tag scene.image.key, crop: :fill %>
+              <% end %>
+            </div>
 
-        </div>
-      <% end %>
+            <div class="slides_text">
+              <% if scene.content? %>
+                <%= "#{scene.content}" %>
+              <% end %>
+            </div>
+
+          </div>
+        <% end %>
+      </div>
+
+      <i class="centre fa-solid fa-right-left"></i>
+
     </div>
-
-    <%= link_to dreamboard_path do %>
-      <i class="fa-solid fa-book-open bas-de-link"></i>
-    <% end %>
-
-
   </div>
 </div>

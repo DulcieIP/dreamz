@@ -20,6 +20,7 @@ a {
   color: #d2189c;
   text-decoration: none;
   background-color: transparent;
+}
 
 @mixin fancy-text($gradient) {
   @keyframes fancy {
@@ -59,4 +60,14 @@ p {
   font-family: sans-serif;
   font-size: 1.3em;
   line-height: 1.6em;
+}
+
+
+.centre{
+  text-align: center;
+}
+
+.goback {
+  position:relative;
+  margin: 30px;
 }
