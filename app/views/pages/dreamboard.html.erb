@@ -5,14 +5,14 @@
       <% @dreams.each do |dream| %>
         <% if dream.user == current_user %>
           <% if dream.scenes.first && dream.scenes.first.image.attached? %>
-            <div class="card card-background my-3 border-0 rounded-4">
+            <div class="card card-background m-3 border-0 rounded-4">
               <%= link_to dream_path(dream), class:"text-decoration-none" do %>
 
                     <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
 
-                  <div class="card-filter">
+                  <div class="cards-filter">
                     <% if dream.content? %>
-                      <p class="card-text p-2"><%= dream.content %></p>
+                      <p class=""><%= dream.content %></p>
                     <% end %>
                   </div>
               <% end %>
@@ -21,12 +21,12 @@
         <% end %>
       <% end %>
 
-      <%= link_to root_path do %>
-        <i class="fa-solid fa-book-open bas-de-link"></i>
-      <% end %>
     </div>
 
 
+      <%# <%= link_to root_path do >
+        <i class="fa-solid fa-book-open bas-de-link"></i>
+      <% end %>
 
   </div>
 </div>
