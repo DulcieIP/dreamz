@@ -1,8 +1,9 @@
 
-<div class="container container-home">
+<div class="container container-home align-items-center d-flex flex-column justify-content-center">
   <div>
-    <h1>Dreamer</h1>
-    <%=link_to "Tell me your dream", new_dream_path%>
+    <div class="title">Dreamer</div>
+    <h6>From dream to image</h6>
+    <%=link_to "Start", new_dream_path%>
     <div>
       <%=link_to dreamboard_path do %>
       <i class="icon-dreamboard fa-solid fa-brain bas-de-link"></i>
@@ -10,4 +11,3 @@
     </div>
   </div>
 </div>
-
