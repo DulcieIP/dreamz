@@ -1,25 +1,27 @@
-<div class="container">
-  <i class="fancy-text fa-solid fa-plus"></i>
-  <%= link_to "Post a new dream", dreamboard_path, class:"fancy-text" %>
-</div>
+<div class="m-4" >
+  <div class="container">
+    <i class="fancy-text fa-solid fa-plus"></i>
+    <%= link_to "Post a new dream", new_dream_path, class:"fancy-text" %>
+  </div>
 
-<div class="container container-dreamboard">
-      <% @dreams.each do |dream| %>
-        <% if dream.user == current_user %>
-          <% if dream.scenes.first && dream.scenes.first.image.attached? %>
-            <div class="card card-background my-3 border-0 rounded-4">
-              <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+  <div class="container container-dreamboard">
+        <% @dreams.each do |dream| %>
+          <% if dream.user == current_user %>
+            <% if dream.scenes.first && dream.scenes.first.image.attached? %>
+              <div class="card card-background my-3 border-0 rounded-4">
+                <%= link_to dream_path(dream), class:"text-decoration-none" do %>
 
-                    <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
+                      <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
 
-                  <div class="card-filter">
-                    <% if dream.content? %>
-                      <p class="card-text p-2"><%= dream.content %></p>
-                    <% end %>
-                  </div>
-              <% end %>
-            </div>
+                    <div class="card-filter">
+                      <% if dream.content? %>
+                        <p class="card-text p-2"><%= dream.content %></p>
+                      <% end %>
+                    </div>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
+  </div>
 </div>
