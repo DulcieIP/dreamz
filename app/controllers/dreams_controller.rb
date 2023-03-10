@@ -13,7 +13,7 @@ class DreamsController < ApplicationController
     end
     # détruit le rève s'il n'y a aucune scène rattachée
     # c'est ça qui casse le dashboard.
-    @dream.destroy unless @dream.scenes?
+    @dream.destroy if @dream.scenes.empty?
 
     redirect_to dreamboard_path
   end
