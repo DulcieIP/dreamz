@@ -1,3 +1,10 @@
+.container-dreamboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
 .cards {
   flex-shrink: 0;
   width: 100%;
