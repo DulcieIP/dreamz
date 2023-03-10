@@ -42,7 +42,8 @@ a {
 }
 
 .fancy-text {
-  @include fancy-text(linear-gradient(to right, #2ebf91, #8360c3, #2ebf91));
+  @include fancy-text(linear-gradient(to right, #67e9c0, #8360c3, #51edc6));
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Basic styles */
