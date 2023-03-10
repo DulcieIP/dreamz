@@ -10,9 +10,9 @@
 
                     <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
 
-                  <div class="slides-text">
+                  <div class="card-filter">
                     <% if dream.content? %>
-                      <p class="card-text text-primary"><%= dream.content %></p>
+                      <p class="card-text p-2"><%= dream.content %></p>
                     <% end %>
                   </div>
               <% end %>
@@ -20,12 +20,13 @@
           <% end %>
         <% end %>
       <% end %>
+
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-book-open bas-de-link"></i>
+      <% end %>
     </div>
 
 
 
   </div>
-    <%= link_to root_path do %>
-      <i class="fa-solid fa-book-open bas-de-link"></i>
-    <% end %>
 </div>
