@@ -6,18 +6,17 @@
         <% if dream.user == current_user %>
             <div class="slides__slide" data-slides-target="slide" data-index=<%= "#{@data_index}" %> >
           <%= link_to dream_path(dream), class:"text-decoration-none" do %>
-
               <div class="slides__slide__image painting painting--no-background" data-controller="painting">
-                <% if dream.scenes.first.image.attached? %>
-                  <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
-                <% end %>
+                  <% if dream.scenes.first && dream.scenes.first.image.attached? %>
+                    <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
+                  <% end %>
               </div>
-
-              <div class="slides_text">
-                <% if dream.content? %>
-                  <%= dream.content %>
-                <% end %>
-              </div>
+                <div class="slides_text">
+                  <% if dream.content? %>
+                    <%= dream.content %>
+                  <% end %>
+                </div>
+                <>
 
             </div>
           <% end %>
