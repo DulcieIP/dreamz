@@ -1,18 +1,18 @@
-<div class="container container-home">
-  <div class="slides">
+<div class="container container-dreamboard">
+  <div>
 
     <div>
       <% @dreams.each do |dream| %>
         <% if dream.user == current_user %>
           <% if dream.scenes.first && dream.scenes.first.image.attached? %>
-            <div class="slides__slide">
+            <div class="card card-background my-3 border-0 rounded-4">
               <%= link_to dream_path(dream), class:"text-decoration-none" do %>
-                  <div class="slides__slide__image painting painting--no-background">
-                    <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
-                  </div>
-                  <div class="slides_text">
+
+                    <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
+
+                  <div class="slides-text">
                     <% if dream.content? %>
-                      <%= dream.content %>
+                      <p class="card-text text-primary"><%= dream.content %></p>
                     <% end %>
                   </div>
               <% end %>
