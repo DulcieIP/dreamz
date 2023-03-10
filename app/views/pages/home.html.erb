@@ -5,11 +5,8 @@
     <h6 class="mb-4">From dream to image</h6>
     <%=link_to "Start", new_dream_path, class: "btn-start"%>
     <div>
-    <div class="d-flex justify-content-center">
-      <%=link_to dreamboard_path do %>
-      <i class="fa-solid fa-brain"></i>
-    </div>
-    <% end %>
+    <div class="d-flex justify-content-center btn-dreamboard">
+      <%=link_to "Go to Dreamboard", dreamboard_path, class: "btn-dreamboard-go" %>
     </div>
   </div>
   <% quantity = 14 %>
