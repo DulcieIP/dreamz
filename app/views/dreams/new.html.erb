@@ -2,14 +2,14 @@
   <div data-hiddenloading-target="form">
     <div class="container">
       <div class="container-form align-items-center d-flex flex-column justify-content-center">
-        <h3>Tell me your dream</h3>
+        <h3 class="fancy-text">Tell me your dream</h3>
         <%= simple_form_for(@dream, html: { class: "w-100", data: { action: "submit->hiddenloading#show"}}) do |f| %>
           <div class="position-relative">
             <%= f.input :content, as: :text, label: false %>
             <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"></i>
           </div>
-          <button type="submit" name="commit" class="btn btn-primary w-100" data-disable-with="Create Dream">
-            <i class="fa-regular fa-moon"></i>
+          <button type="submit" name="commit" class="custom-btn btn-6 displayed" data-disable-with="Create Dream">
+            <i class="fa-solid fa-eye"></i>
           </button>
         <% end %>
       </div>
@@ -17,7 +17,11 @@
   </div>
 
     <div class="hiddenloading d-none" data-hiddenloading-target="loading">
-      <%= image_tag("Infinity-1s-200px.gif", alt:"loading")%>
+      <%# Quantity should be the same in Sass %>
+      <% quantity = 14 %>
+      <% for i in 1..quantity do %>
+        <div class="firefly"></div>
+      <% end %>
     </div>
   </div>
 </div>

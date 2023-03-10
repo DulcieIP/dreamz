@@ -11,6 +11,10 @@ class DreamsController < ApplicationController
     @rejected_scenes.each do |scene|
       scene.destroy
     end
+    # détruit le rève s'il n'y a aucune scène rattachée
+    # c'est ça qui casse le dashboard.
+    @dream.destroy if @dream.scenes.empty?
+
     redirect_to dreamboard_path
   end
 
@@ -34,7 +38,6 @@ class DreamsController < ApplicationController
     @dream = Dream.find(params[:id])
   end
 
-
   private
 
   def openai_request
@@ -43,7 +46,7 @@ class DreamsController < ApplicationController
     request = client.chat(
       parameters: {
           model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: "if you can, split this text in paragraph without adding any word to it. if you can't just re-write the text without ant change: '#{prompt}' ", }],
+          messages: [{ role: "user", content: "if you can, split this text in paragraph without adding any word to it. if you can't just re-write the text without any change: '#{prompt}' ", }],
           temperature: 0
       }
     )

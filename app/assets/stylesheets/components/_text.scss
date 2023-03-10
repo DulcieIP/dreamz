@@ -1,3 +1,4 @@
+
 .title {
   color: #f1e1e1;
   opacity: 0.6;
@@ -19,4 +20,43 @@ a {
   color: #d2189c;
   text-decoration: none;
   background-color: transparent;
+
+@mixin fancy-text($gradient) {
+  @keyframes fancy {
+    from {
+      background-position: 0% 50%;
+    }
+    to {
+      background-position: -200% 50%;
+    }
+  }
+  background: $gradient;
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  color: rgba(0, 0, 0, 0);
+  animation: fancy 3s infinite linear;
+}
+
+.fancy-text {
+  @include fancy-text(linear-gradient(to right, #2ebf91, #8360c3, #2ebf91));
+}
+
+/* Basic styles */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+
+
+h1 {
+  font-family: Montserrat;
+  max-width: 15ch;
+  font-size: 3em;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 1.3em;
+  line-height: 1.6em;
 }
