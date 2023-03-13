@@ -7,15 +7,17 @@
     <h1 class="fancy-text">My dream</h1>
   </div>
 
+<%# image sélectionnée %>
+<div id="selected-image">
 
-
+</div>
 
 <%# slider des scenes %>
   <div class="dreams">
     <div class="dreams_content_thumb">
       <% if @dream.scenes.first && @dream.scenes.first.image.attached? %>
         <% @dream.scenes.each do |scene| %>
-          <div class="dreams_dream-thumb" data-dreams-target="dream">
+          <div class="dreams_dream-thumb" data-dreams-target="dream" data-action="click->dream#selectImage">
             <div class="dreams_dream_image_thumb">
               <%= cl_image_tag scene.image.key, effect: :grayscale %>
             </div>
