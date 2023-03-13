@@ -4,6 +4,8 @@
 
 import { application } from "./application"
 
+import GradientController from "./gradient_controller"
+application.register("gradient", GradientController)
+
 import HiddenloadingController from "./hiddenloading_controller"
 application.register("hiddenloading", HiddenloadingController)
-
