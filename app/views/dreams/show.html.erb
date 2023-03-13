@@ -1,3 +1,4 @@
+<div>
   <div>
     <i class="fancy-text fa-solid fa-arrow-left"></i>
     <%= link_to "Go back", dreamboard_path, class:"fancy-text" %>
@@ -17,7 +18,7 @@
     <div class="dreams_content_thumb">
       <% if @dream.scenes.first && @dream.scenes.first.image.attached? %>
         <% @dream.scenes.each do |scene| %>
-          <div class="dreams_dream-thumb" data-dreams-target="dream" data-action="click->dream#selectImage">
+          <div class="dreams_dream-thumb" data-dream-target="dream" data-action="click->dream#selectImage">
             <div class="dreams_dream_image_thumb">
               <%= cl_image_tag scene.image.key, effect: :grayscale %>
             </div>
@@ -27,9 +28,14 @@
     </div>
   </div>
 
+<%# dream.content %>
 
-
+  <div>
+    <%= @dream.content %>
+  </div>
 
   <div class="d-flex justify-content-center">
     <i class="fa-solid fa-right-left"></i>
   </div>
+
+</div>
