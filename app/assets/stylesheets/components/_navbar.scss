@@ -1,6 +1,6 @@
 .navbar {
   background: rgb(255, 255, 255);
-  position: fixed; /* Set the navbar to fixed position */
+  position: fixed!important; /* Set the navbar to fixed position */
   bottom: 0; /* Position the navbar at the top of the page */
   width: 100%;
   overflow: hidden;
@@ -20,5 +20,5 @@
 
 
 .main {
-  margin-bottom: 30px; /* Add a bottom margin to avoid content overlay */
+  margin: 4px 4px 80px 4px;
 }

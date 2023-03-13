@@ -19,6 +19,7 @@ puts "seeding user"
 dreamer = User.new(
   email: "dreamer@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
   username: "Dreamer"
 )
 dreamer.save!
@@ -26,25 +27,28 @@ dreamer.save!
 julien = User.new(
   email: "julien@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
   username: "Julien"
 )
-dreamer.save!
+julien.save!
 
 mathieu = User.new(
   email: "mathieu@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
   username: "Mathieu"
 )
-dreamer.save!
+mathieu.save!
 
 dulcie = User.new(
   email: "dulcie@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
   username: "Dulcie"
 )
-dreamer.save!
+dulcie.save!
 
-puts "dreamer user seeded"
+puts "users seeded"
 
 
 # DREAMS
