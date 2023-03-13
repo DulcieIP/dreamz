@@ -7,3 +7,5 @@ import { application } from "./application"
 import HiddenloadingController from "./hiddenloading_controller"
 application.register("hiddenloading", HiddenloadingController)
 
+import ToggleElementController from "./toggle_element_controller"
+application.register("toggle-element", ToggleElementController)

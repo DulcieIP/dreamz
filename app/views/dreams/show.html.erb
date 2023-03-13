@@ -11,7 +11,7 @@
     </div>
 
 
-      <div class="slides" data-slides-target="container" data-action="keydown@window->slides#keydown click->slides#hide">
+      <div class="slides" >
         <%# <button class="slides__button slides__button--close" data-action="click->slides#hide">
         </button>
 
@@ -20,10 +20,10 @@
 
         <button class="slides__button slides__button--next" data-action="click->slides#next" data-slides-target="next">
         </button> %>
-        <div class="slides__content mt-5" data-slides-target="content" data-action="scroll->slides#scroll">
+        <div class="slides_content mt-5" >
           <% @dream.scenes.each do |scene| %>
-            <div class="slides__slide" data-slides-target="slide">
-              <div class="slides__slide__image painting painting--no-background" data-controller="painting">
+            <div class="slides_slide" data-slides-target="slide">
+              <div class="slides_slide_image" >
                 <% if scene.image.attached? %>
                   <%= cl_image_tag scene.image.key, crop: :fill %>
                 <% end %>
