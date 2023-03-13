@@ -15,26 +15,30 @@
       <% @dreams.each do |dream| %>
           <% if dream.scenes.first && dream.scenes.first.image.attached? %>
             <div class="card card-background m-3 border-0 rounded-4">
-              <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+              <div class="slides_content mt-5" >
+                <% dream.scenes.each do |scene| %>
+                  <div class="slides_slide" data-slides-target="slide">
+                    <div class="slides_slide_image" >
+                      <% if scene.image.attached? %>
+                        <%= cl_image_tag scene.image.key, crop: :fill %>
+                      <% end %>
+                    </div>
 
-                      <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
+                    <div class="slides_text slides_text_trunc"
+                    data-controller="toggle-element"
+                    data-action="click->toggle-element#toggle"
+                    data-toggle-element-target="element">
+                      <% if scene.content? %>
+                        <%= "#{scene.content}" %>
+                      <% end %>
+                    </div>
 
-                  <div class="cards-filter">
-                    <% if dream.content? %>
-                      <p class=""><%= dream.content %></p>
-                    <% end %>
                   </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           <% end %>
       <% end %>
-
     </div>
-
-
-      <%# <%= link_to root_path do >
-        <i class="fa-solid fa-book-open bas-de-link"></i>
-      <% end %>
-
   </div>
 </div>
