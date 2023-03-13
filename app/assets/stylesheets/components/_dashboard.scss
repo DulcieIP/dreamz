@@ -2,7 +2,6 @@
 .dreams_content {
   position: relative;
   right: 0;
-  bottom: 2rem;
   left: 0;
   display: flex;
   overflow-x: scroll;
@@ -50,4 +49,41 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+.dreams_content_thumb {
+  height: 40vh;
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  // -webkit-overflow-scrolling: touch;
+  // scrollbar-width: none;
+  // -ms-overflow-style: none;
+  margin-top: 5vh;
+}
+
+.dreams_dream-thumb {
+  scroll-snap-align: start end;
+  margin-bottom: 3vh
+}
+
+.dreams_dream_image_thumb {
+  height: 45%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  color: transparent;
+}
+
+.dreams_dream_image_thumb img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.dreams_content_thumb::-webkit-scrollbar {
+  display: none
+}
+
+.dreams_content_thumb:not(.is-setting-scroll) {
+  scroll-behavior: smooth
 }
