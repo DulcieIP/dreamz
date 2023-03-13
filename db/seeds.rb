@@ -19,28 +19,36 @@ puts "seeding user"
 dreamer = User.new(
   email: "dreamer@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
+  username: "Dreamer"
 )
 dreamer.save!
 
 julien = User.new(
   email: "julien@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
+  username: "Julien"
 )
-dreamer.save!
+julien.save!
 
 mathieu = User.new(
   email: "mathieu@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
+  username: "Mathieu"
 )
-dreamer.save!
+mathieu.save!
 
 dulcie = User.new(
   email: "dulcie@lewagon.fr",
   password: "password",
+  password_confirmation: "password",
+  username: "Dulcie"
 )
-dreamer.save!
+dulcie.save!
 
-puts "dreamer user seeded"
+puts "users seeded"
 
 
 # DREAMS
@@ -59,11 +67,6 @@ wagon = Dream.new(
 )
 wagon.save!
 
-# forest = Dream.new(
-#   user: dulcie,
-#   content: "In the middle of the forest, a monkey is dazzled by the sunlight through the canopy. he hides in the shade to take care of his cubs."
-#   )
-# desert.save!
 
 puts "dreams seeded"
 
@@ -99,14 +102,5 @@ file = URI.open(url)
 desert_scene2.image.attach(io: file, filename: "desert_scene2.png", content_type: "image/png")
 desert_scene2.save!
 
-
-# forest_scene1 = Scene.new(
-#   user: dulcie,
-#   content: "In the middle of the forest, a monkey is dazzled by the sunlight through the canopy."
-#   )
-# url =
-# file = URI.open(url)
-# forest_scene1.image.attach(io: file, filename: "forest_scene1.png", content_type: "image/png")
-# forest_scene1.save!
 
 puts "scenes seeded"
