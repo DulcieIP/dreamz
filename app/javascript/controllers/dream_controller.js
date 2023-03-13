@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["selectedImage"]
 
   connect() {
-    console.log('hello from dreams controller')
+    console.log('hello from dream controller')
   }
 
   selectImage(event) {

@@ -3,8 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="checked-icon"
 export default class extends Controller {
   connect() {
-    console.log("coucou")
-  }
+    console.log("coucou");
 
     const labels = document.querySelectorAll('.scene-wrapper label');
 
@@ -24,6 +23,5 @@ export default class extends Controller {
         }
       });
     });
-
-
+  }
 }

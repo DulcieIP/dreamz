@@ -8,7 +8,7 @@ import CheckedIconController from "./checked_icon_controller"
 application.register("checked-icon", CheckedIconController)
 
 import DreamController from "./dream_controller"
-application.register("dreams", DreamController)
+application.register("dream", DreamController)
 
 import GradientController from "./gradient_controller"
 application.register("gradient", GradientController)
