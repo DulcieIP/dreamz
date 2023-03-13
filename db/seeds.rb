@@ -19,24 +19,28 @@ puts "seeding user"
 dreamer = User.new(
   email: "dreamer@lewagon.fr",
   password: "password",
+  username: "Dreamer"
 )
 dreamer.save!
 
 julien = User.new(
   email: "julien@lewagon.fr",
   password: "password",
+  username: "Julien"
 )
 dreamer.save!
 
 mathieu = User.new(
   email: "mathieu@lewagon.fr",
   password: "password",
+  username: "Mathieu"
 )
 dreamer.save!
 
 dulcie = User.new(
   email: "dulcie@lewagon.fr",
   password: "password",
+  username: "Dulcie"
 )
 dreamer.save!
 
