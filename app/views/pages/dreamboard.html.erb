@@ -15,14 +15,16 @@
       <% @dreams.each do |dream| %>
         <% if dream.scenes.first && dream.scenes.first.image.attached? %>
           <div class="dreams_dream" data-dreams-target="dream">
-            <div class="dreams_dream_image" >
-                <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
-            </div>
+            <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+              <div class="dreams_dream_image" >
+                  <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
+              </div>
 
-            <div>
-              <%= dream.content %>
-            </div>
+              <div class="dreams_text">
+                <%= dream.content %>
+              </div>
 
+            <% end %>
           </div>
         <% end %>
       <% end %>
