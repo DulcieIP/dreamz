@@ -11,6 +11,9 @@ Scene.destroy_all
 Dream.destroy_all
 User.destroy_all
 
+
+# USERS
+
 puts "seeding user"
 
 dreamer = User.new(
@@ -19,8 +22,28 @@ dreamer = User.new(
 )
 dreamer.save!
 
+julien = User.new(
+  email: "julien@lewagon.fr",
+  password: "password",
+)
+dreamer.save!
+
+mathieu = User.new(
+  email: "mathieu@lewagon.fr",
+  password: "password",
+)
+dreamer.save!
+
+dulcie = User.new(
+  email: "dulcie@lewagon.fr",
+  password: "password",
+)
+dreamer.save!
+
 puts "dreamer user seeded"
 
+
+# DREAMS
 
 puts "seeding dreams"
 
@@ -36,7 +59,16 @@ wagon = Dream.new(
 )
 wagon.save!
 
+# forest = Dream.new(
+#   user: dulcie,
+#   content: "In the middle of the forest, a monkey is dazzled by the sunlight through the canopy. he hides in the shade to take care of his cubs."
+#   )
+# desert.save!
+
 puts "dreams seeded"
+
+
+# SCENES
 
 puts "seeding scenes"
 
@@ -66,5 +98,15 @@ url = "https://res.cloudinary.com/dblvbc7iu/image/upload/c_pad,b_auto:predominan
 file = URI.open(url)
 desert_scene2.image.attach(io: file, filename: "desert_scene2.png", content_type: "image/png")
 desert_scene2.save!
+
+
+# forest_scene1 = Scene.new(
+#   user: dulcie,
+#   content: "In the middle of the forest, a monkey is dazzled by the sunlight through the canopy."
+#   )
+# url =
+# file = URI.open(url)
+# forest_scene1.image.attach(io: file, filename: "forest_scene1.png", content_type: "image/png")
+# forest_scene1.save!
 
 puts "scenes seeded"
