@@ -1,0 +1,35 @@
+<div class="m-4" >
+  <div class="container">
+    <i class="fancy-text fa-solid fa-plus"></i>
+    <%= link_to "Post a new dream", new_dream_path, class:"fancy-text" %>
+  </div>
+
+
+   <div class="d-flex justify-content-center">
+      <h1 class="fancy-text mt-4">My dreams</h1>
+  </div>
+
+    <div>
+      <% @dreams.each do |dream| %>
+        <% if dream.user == current_user %>
+          <% if dream.scenes.first && dream.scenes.first.image.attached? %>
+            <div class="card card-background m-3 border-0 rounded-4">
+              <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+
+                      <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
+
+                  <div class="cards-filter">
+                    <% if dream.content? %>
+                      <p class=""><%= dream.content %></p>
+                    <% end %>
+                  </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
