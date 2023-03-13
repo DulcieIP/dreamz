@@ -10,7 +10,7 @@
   </div>
 
     <div>
-      <% @dreams.each do |dream| %>
+      <% @dreams.reverse.each do |dream| %>
         <% if dream.user == current_user %>
           <% if dream.scenes.first && dream.scenes.first.image.attached? %>
             <div class="card card-background m-3 border-0 rounded-4">
