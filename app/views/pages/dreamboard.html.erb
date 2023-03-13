@@ -14,7 +14,6 @@
         <% if dream.user == current_user %>
           <% if dream.scenes.first && dream.scenes.first.image.attached? %>
             <div class="card card-background m-3 border-0 rounded-4">
-              <%# <%= link_to dream_path(dream), class:"text-decoration-none" do %>
               <div class="slides_content mt-5" >
                 <% dream.scenes.each do |scene| %>
                   <div class="slides_slide" data-slides-target="slide">
@@ -24,7 +23,10 @@
                       <% end %>
                     </div>
 
-                    <div class="slides_text">
+                    <div class="slides_text slides_text_trunc"
+                    data-controller="toggle-element"
+                    data-action="click->toggle-element#toggle"
+                    data-toggle-element-target="element">
                       <% if scene.content? %>
                         <%= "#{scene.content}" %>
                       <% end %>
@@ -33,19 +35,10 @@
                   </div>
                 <% end %>
               </div>
-                      <%# <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" >
-
-                  <div class="cards-filter">
-                    <% if dream.content? >
-                      <p class=""><%= dream.content ></p>
-                    <% end >
-                  </div> %>
-              <%# <% end %>
             </div>
           <% end %>
         <% end %>
       <% end %>
-
     </div>
   </div>
 </div>

@@ -52,13 +52,17 @@
 .slides_text {
   margin-top: 1.5vh;
   padding: 5px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  overflow: hidden;
+
   color:white;
   font-family: Montserrat;
   text-align: justify;
+}
+
+.slides_text_trunc:not(.active) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 
