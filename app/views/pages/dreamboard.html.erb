@@ -2,6 +2,8 @@
   <div class="container">
     <i class="fancy-text fa-solid fa-plus"></i>
     <%= link_to "Post a new dream", new_dream_path, class:"fancy-text" %>
+    <%= link_to "Go to dreamfeed", dreamfeed_path, class:"fancy-text" %>
+
   </div>
 
 
@@ -11,7 +13,6 @@
 
     <div>
       <% @dreams.each do |dream| %>
-        <% if dream.user == current_user %>
           <% if dream.scenes.first && dream.scenes.first.image.attached? %>
             <div class="card card-background m-3 border-0 rounded-4">
               <%= link_to dream_path(dream), class:"text-decoration-none" do %>
@@ -26,7 +27,6 @@
               <% end %>
             </div>
           <% end %>
-        <% end %>
       <% end %>
 
     </div>
