@@ -1,7 +1,7 @@
 .hamburger {
   position: absolute;
   left: 30px;
-  top: 30px;
+  top: 17px;
   height: 18px;
   width: 24px;
   flex-direction: column;
@@ -9,6 +9,16 @@
   cursor: pointer;
   user-select: none;
   z-index: 1;
+  font-size: larger;
+}
+
+.logo i {
+  position: absolute;
+  right: 30px;
+  top: 17px;
+  font-size: 30px;
+  color: white;
+  opacity: 1;
 }
 
 .hamburger i {
@@ -127,4 +137,9 @@
       transform: translatex(0);
     }
   }
+}
+
+
+.navblock {
+  height: 7vh;
 }
