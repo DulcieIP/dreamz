@@ -1,10 +1,8 @@
-
-<div id="dreamer-intro" class="container-home">
-  <div class=" container animate__animated animate__fadeIn ">
-    <h1>Dreamer</h1>
+<div class="container" data-controller="homepage" data-action="click->homepage#hide">
+  <div id="dreamer-intro" class="container-home">
+    <div data-homepage-target="title" class="animate__animated animate__fadeIn ">
+      <h1>Dreamer</h1>
+    </div>
+    <h1><span class="d-none" data-homepage-target="message"></span></h1>
   </div>
 </div>
-<%#
-<div class="animate__animated animate__pulse animate__slow animate__infinite	infinite">
-  <%=link_to "Start", new_dream_path, class: "btn-start animate__animated animate__pulse animate__slow animate__infinite	infinite"%>
-<%# </div> %>
