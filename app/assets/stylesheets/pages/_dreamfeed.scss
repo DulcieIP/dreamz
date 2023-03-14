@@ -13,3 +13,20 @@
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
+
+.big-image {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.img100 {
+  width: 100%;
+}
