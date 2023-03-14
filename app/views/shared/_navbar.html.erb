@@ -1,16 +1,18 @@
-<label for="menu-control" class="hamburger">
-  <i class="fa-solid fa-ellipsis"></i>
-</label>
+<div class="navblock">
+  <label for="menu-control" class="hamburger">
+    <i class="fa-solid fa-ellipsis"></i>
+  </label>
+</div>
 
-<input type="checkbox" id="menu-control" class="menu-control">
+  <input type="checkbox" id="menu-control" class="menu-control">
 
-<aside class="sidebar">
+  <aside class="sidebar">
 
-  <nav class="sidebar__menu">
-    <%= link_to "a new dream", new_dream_path %>
-    <%= link_to "dreamboard", dreamboard_path %>
-    <%= link_to "feed", dreamfeed_path %>
-  </nav>
+    <nav class="sidebar__menu">
+      <%= link_to "a new dream", new_dream_path %>
+      <%= link_to "dreamboard", dreamboard_path %>
+      <%= link_to "feed", dreamfeed_path %>
+    </nav>
 
-  <label for="menu-control" class="sidebar__close"></label>
-</aside>
+    <label for="menu-control" class="sidebar__close"></label>
+  </aside>
