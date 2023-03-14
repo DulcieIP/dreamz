@@ -1,17 +1,18 @@
 
 <div class="main" >
 
-   <div class="d-flex justify-content-center">
-      <h1 class="fancy-text mt-4">Dream feed</h1>
+  <div class="d-flex justify-content-center">
+    <h1 class="fancy-text mt-4">Dream feed</h1>
   </div>
-    <div>
-      <% @dreams.each do |dream| %>
+
+
+    <% @dreams.each do |dream| %>
+
         <% if dream.scenes.first && dream.scenes.first.image.attached? %>
-          <%= link_to dream.user.username, user_dreamboard_path(dream.user), class: 'btn btn-primary' %>
-            <div class="card card-background m-3 border-0 rounded-4">
+
               <%= link_to dream_path(dream), class:"text-decoration-none" do %>
                 <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
-                <div class="cards-filter">
+                <div class="slides_text">
                   <% if dream.content? %>
                     <p class=""><%= dream.content %></p>
                   <% end %>
@@ -19,24 +20,7 @@
               <% end %>
             </div>
         <% end %>
-      <% end %>
+      </div>
+    <% end %>
 
-    </div>
-  </div>
-</div>
-
-<%# NAVBAR %>
-<div class="navbar d-flex">
-  <div class="container">
-    <%= link_to dreamfeed_path do %>
-      <i class="fa-solid fa-house icon-size fancy-text"></i>
-    <% end %>
-    <%= link_to dreamfeed_path do %>
-      <i class="fa-solid fa-magnifying-glass icon-size fancy-text"></i>
-    <% end %>
-    <%= link_to new_dream_path do %>
-      <i class="fa-solid fa-plus icon-size2 fancy-text"></i>
-    <% end %>
-    <img class="avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-  </div>
 </div>
