@@ -52,7 +52,7 @@
 }
 
 .dreams_content_thumb {
-  height: 40vh;
+  height: 13vh;
   position: relative;
   display: flex;
   overflow-x: scroll;
@@ -60,19 +60,21 @@
   // -webkit-overflow-scrolling: touch;
   // scrollbar-width: none;
   // -ms-overflow-style: none;
-  margin-top: 5vh;
+  margin-top: 1vh;
 }
 
 .dreams_dream-thumb {
   scroll-snap-align: start end;
-  margin-bottom: 3vh
+  // margin-bottom: 3vh
 }
 
 .dreams_dream_image_thumb {
-  height: 45%;
+  height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
   color: transparent;
+  margin-right: 2vw
+
 }
 
 .dreams_dream_image_thumb img {
@@ -89,4 +91,13 @@
 
 .dreams_content_thumb:not(.is-setting-scroll) {
   scroll-behavior: smooth
+}
+
+#selected_image img {
+  width: 100%
+}
+
+.dreams_content_text {
+  color: white;
+  padding: 1vh;
 }
