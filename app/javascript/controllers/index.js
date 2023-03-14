@@ -10,6 +10,9 @@ application.register("checked-icon", CheckedIconController)
 import DreamController from "./dream_controller"
 application.register("dream", DreamController)
 
+import DreamfeedController from "./dreamfeed_controller"
+application.register("dreamfeed", DreamfeedController)
+
 import GradientController from "./gradient_controller"
 application.register("gradient", GradientController)
 
