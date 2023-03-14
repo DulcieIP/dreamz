@@ -54,7 +54,23 @@
   color: white;
   text-align: center;
   font-weight: 100;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  height: 26vh;
 }
+
+.dreams_texte p {
+  scroll-snap-align: start end;
+}
+
+.dreams_texte:not(.is-setting-scroll) {
+  scroll-behavior: smooth
+}
+
+.dreams_texte::-webkit-scrollbar {
+  display: none
+}
+
 
 .dreams_text_trunc:not(.active) {
   display: -webkit-box;
