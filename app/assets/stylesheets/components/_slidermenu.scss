@@ -1,7 +1,28 @@
-.hamburger {
+.sidebar.active {
+  transform: translatex(0);
+  .sidebar__close {
+    transform: translatex(0) rotate(45deg);
+  }
+
+  .sidebar .sidebar__menu a {
+    transform: translatex(0);
+  }
+}
+
+.navblock {
+  height: 7vh;
+}
+
+.logo {
+  position: absolute;
+  left: 313px;
+  top: 15px;
+}
+
+.dots {
   position: absolute;
   left: 30px;
-  top: 17px;
+  top: 19px;
   height: 18px;
   width: 24px;
   flex-direction: column;
@@ -12,16 +33,7 @@
   font-size: xx-large;
 }
 
-.logo i {
-  position: absolute;
-  right: 30px;
-  top: 17px;
-  font-size: 30px;
-  color: white;
-  opacity: 1;
-}
-
-.hamburger i {
+.dots i {
   color: white;
   opacity: 1;
 }
@@ -85,7 +97,7 @@
     a {
       color: currentcolor;
       text-decoration: none;
-      transform: translatex(-80%);
+      transform: translatex(10%);
       transition: transform 0.4s ease-in-out;
       &:hover {
         text-decoration: none;
@@ -120,27 +132,4 @@
     }
   }
 
-}
-
-.menu-control {
-  display: none;
-
-  &:checked {
-    & + .sidebar {
-      transform: translatex(0);
-    }
-
-    & + .sidebar .sidebar__close {
-      transform: translatex(0) rotate(45deg);
-    }
-
-    & + .sidebar .sidebar__menu a {
-      transform: translatex(0);
-    }
-  }
-}
-
-
-.navblock {
-  height: 7vh;
 }
