@@ -4,19 +4,12 @@
 
 <div class="grid">
   <% @dreams.each do |dream| %>
-        <div class="imgcard">
     <% if dream.scenes.first && dream.scenes.first.image.attached? %>
           <%= link_to dream_path(dream), class:"text-decoration-none" do %>
-            <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
-            <div>
-              <% if dream.content? %>
-                <p><%= dream.content %></p>
-              <% end %>
+            <div class="dreams_dreamfeed_image_thumb">
+            <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top" %>
             </div>
           <% end %>
     <% end %>
-        </div>
   <% end %>
 </div>
-
-      <%# <%= link_to dream.user.username, user_dreamboard_path(dream.user), class: 'btn btn-primary' %>
