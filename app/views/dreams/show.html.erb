@@ -1,46 +1,41 @@
-<div class="m-4" >
-
+<div>
   <div>
     <i class="fancy-text fa-solid fa-arrow-left"></i>
     <%= link_to "Go back", dreamboard_path, class:"fancy-text" %>
   </div>
 
-  <div class="dream-card">
-    <div class="d-flex justify-content-center">
-      <h1 class="fancy-text">My dream</h1>
-    </div>
-
-
-      <div class="slides" >
-        <%# <button class="slides__button slides__button--close" data-action="click->slides#hide">
-        </button>
-
-        <button class="slides__button slides__button--prev is-hidden" data-action="click->slides#prev" data-slides-target="prev">
-          </button>
-
-        <button class="slides__button slides__button--next" data-action="click->slides#next" data-slides-target="next">
-        </button> %>
-        <div class="slides_content mt-5" >
-          <% @dream.scenes.each do |scene| %>
-            <div class="slides_slide" data-slides-target="slide">
-              <div class="slides_slide_image" >
-                <% if scene.image.attached? %>
-                  <%= cl_image_tag scene.image.key, crop: :fill %>
-                <% end %>
-              </div>
-
-              <div class="slides_text">
-                <% if scene.content? %>
-                  <%= "#{scene.content}" %>
-                <% end %>
-              </div>
-
-            </div>
-          <% end %>
-        </div>
-        <div class="d-flex justify-content-center">
-          <i class="fa-solid fa-right-left"></i>
-        </div>
-      </div>
+  <div class="d-flex justify-content-center">
+    <h1 class="fancy-text">My dream</h1>
   </div>
+<div data-controller="dream">
+<%# image sélectionnée %>
+  <div id="selected_image" data-dream-target="selectedImage">
+    <%= cl_image_tag @dream.scenes.first.image.key%>
+  </div>
+
+<%# slider des scenes %>
+  <div class="dreams">
+    <div class="dreams_content_thumb">
+      <% if @dream.scenes.first && @dream.scenes.first.image.attached? %>
+        <% @dream.scenes.each do |scene| %>
+          <div class="dreams_dream-thumb" data-dream-target="dream" data-action="click->dream#selectImage">
+            <div class="dreams_dream_image_thumb">
+              <%= cl_image_tag scene.image.key %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%# dream.content %>
+
+  <div class="dreams_content_text">
+    <%= @dream.content %>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <i class="fa-solid fa-right-left"></i>
+  </div>
+
 </div>

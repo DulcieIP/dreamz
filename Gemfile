@@ -80,3 +80,4 @@ group :test do
 end
 
 gem "ruby-openai"
+gem 'sass-rails'
