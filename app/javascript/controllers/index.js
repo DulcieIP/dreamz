@@ -10,11 +10,18 @@ application.register("checked-icon", CheckedIconController)
 import DreamController from "./dream_controller"
 application.register("dream", DreamController)
 
+import DreamfeedController from "./dreamfeed_controller"
+application.register("dreamfeed", DreamfeedController)
+
 import GradientController from "./gradient_controller"
 application.register("gradient", GradientController)
 
 import HiddenloadingController from "./hiddenloading_controller"
 application.register("hiddenloading", HiddenloadingController)
 
+import HomepageController from "./homepage_controller"
+application.register("homepage", HomepageController)
+
 import ToggleElementController from "./toggle_element_controller"
 application.register("toggle-element", ToggleElementController)
+

@@ -2,7 +2,7 @@
 .container-home {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   height: 100vh;
   padding-block-start: 150px;
@@ -11,4 +11,8 @@
 
 #dreamer-intro {
   --animate-duration: 5s;
+}
+
+.animate__animated.animate__fadeOutLeft {
+  --animate-duration: 1s;
 }
