@@ -3,10 +3,10 @@
 <div data-controller="hiddenloading">
   <div data-hiddenloading-target="form">
     <div class="container">
-      <div class="mt-5 container-form align-items-center d-flex flex-column">
+      <div class="mt-5 align-items-center d-flex flex-column">
         <%= simple_form_for(@dream, html: {data: { action: "submit->hiddenloading#show"}}) do |f| %>
           <div class="position-relative">
-            <%= f.input :content, as: :text, label: false, placeholder: "White horses were standing...  " %>
+            <%= f.input :content, as: :text, label: "250 words max.", placeholder: "White horses were standing...  ", input_html: {autofocus: true}%>
             <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"></i>
           </div>
           <button type="submit" name="commit" class="custom-btn btn-6 displayed" data-disable-with="Create Dream">
