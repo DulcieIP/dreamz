@@ -28,8 +28,9 @@
     <p> <%= @dream.content %></p>
   </div>
 
-  <div class="d-flex justify-content-center">
-    <i class="fa-solid fa-right-left"></i>
-  </div>
 
+
+  <div class="d-flex justify-content-center">
+    <%= link_to "<i class='fa-solid fa-right-left'></i>".html_safe, :back %>
+  </div>
 </div>
