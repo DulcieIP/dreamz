@@ -7,11 +7,11 @@
   <div class="d-flex justify-content-center">
     <h1 class="fancy-text">My dream</h1>
   </div>
-<div data-controller="dream">
+
 <%# image sélectionnée %>
-  <div id="selected_image" data-dream-target="selectedImage">
-    <%= cl_image_tag @dream.scenes.first.image.key%>
-  </div>
+<div id="selected-image">
+  <%= cl_image_tag @dream.scenes.first.image.key%>
+</div>
 
 <%# slider des scenes %>
   <div class="dreams">
@@ -27,10 +27,10 @@
       <% end %>
     </div>
   </div>
-</div>
+
 <%# dream.content %>
 
-  <div class="dreams_content_text">
+  <div>
     <%= @dream.content %>
   </div>
 
