@@ -1,16 +1,13 @@
-<div>
 <%= render "shared/navbar" %>
 
-  <div class="d-flex justify-content-center">
-    <h1 class="fancy-text">My dream</h1>
+<div data-controller="dream">
+
+  <%# image sélectionnée %>
+  <div id="selected-image" class="dreams_dream_image" data-dream-target="selectedImage">
+    <%= cl_image_tag @dream.scenes.first.image.key%>
   </div>
 
-<%# image sélectionnée %>
-<div id="selected-image">
-  <%= cl_image_tag @dream.scenes.first.image.key%>
-</div>
-
-<%# slider des scenes %>
+  <%# slider des scenes %>
   <div class="dreams">
     <div class="dreams_content_thumb">
       <% if @dream.scenes.first && @dream.scenes.first.image.attached? %>
@@ -25,10 +22,10 @@
     </div>
   </div>
 
-<%# dream.content %>
+  <%# dream.content %>
 
-  <div>
-    <%= @dream.content %>
+  <div class="dreams_texte">
+    <p> <%= @dream.content %></p>
   </div>
 
   <div class="d-flex justify-content-center">
