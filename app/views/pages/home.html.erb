@@ -1,13 +1,10 @@
 
-<div class="container container-home align-items-center d-flex flex-column justify-content-center">
-  <div class="text-center">
-    <div class="title">Dreamer</div>
-    <h6 class="mb-4 ">From dream to image</h6>
-    <%=link_to "Start", new_dream_path, class: "btn-start"%>
-    <div>
+<div id="dreamer-intro" class="container-home">
+  <div class=" container animate__animated animate__fadeIn ">
+    <h1>Dreamer</h1>
   </div>
 </div>
-<% quantity = 10 %>
-<% for i in 1..quantity do %>
-  <div class="firefly"></div>
-<% end %>
+<%#
+<div class="animate__animated animate__pulse animate__slow animate__infinite	infinite">
+  <%=link_to "Start", new_dream_path, class: "btn-start animate__animated animate__pulse animate__slow animate__infinite	infinite"%>
+<%# </div> %>
