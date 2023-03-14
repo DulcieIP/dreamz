@@ -4,6 +4,12 @@
 
 import { application } from "./application"
 
+import CheckedIconController from "./checked_icon_controller"
+application.register("checked-icon", CheckedIconController)
+
+// import DreamController from "./dream_controller"
+// application.register("dream", DreamController)
+
 import GradientController from "./gradient_controller"
 application.register("gradient", GradientController)
 
@@ -12,4 +18,3 @@ application.register("hiddenloading", HiddenloadingController)
 
 import ToggleElementController from "./toggle_element_controller"
 application.register("toggle-element", ToggleElementController)
-

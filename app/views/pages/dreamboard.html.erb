@@ -1,9 +1,8 @@
-<div class="m-4" >
+
   <div class="container">
     <i class="fancy-text fa-solid fa-plus"></i>
     <%= link_to "Post a new dream", new_dream_path, class:"fancy-text" %>
     <%= link_to "Go to dreamfeed", dreamfeed_path, class:"fancy-text" %>
-
   </div>
 
 
@@ -11,34 +10,23 @@
       <h1 class="title">My dreams</h1>
   </div>
 
-    <div>
+  <div class="dreams">
+    <div class="dreams_content">
       <% @dreams.each do |dream| %>
-          <% if dream.scenes.first && dream.scenes.first.image.attached? %>
-            <div class="card card-background m-3 border-0 rounded-4">
-              <div class="slides_content mt-5" >
-                <% dream.scenes.each do |scene| %>
-                  <div class="slides_slide" data-slides-target="slide">
-                    <div class="slides_slide_image" >
-                      <% if scene.image.attached? %>
-                        <%= cl_image_tag scene.image.key, crop: :fill %>
-                      <% end %>
-                    </div>
-
-                    <div class="slides_text slides_text_trunc"
-                    data-controller="toggle-element"
-                    data-action="click->toggle-element#toggle"
-                    data-toggle-element-target="element">
-                      <% if scene.content? %>
-                        <%= "#{scene.content}" %>
-                      <% end %>
-                    </div>
-
-                  </div>
-                <% end %>
+        <% if dream.scenes.first && dream.scenes.first.image.attached? %>
+          <div class="dreams_dream" data-dreams-target="dream">
+            <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+              <div class="dreams_dream_image" >
+                  <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
               </div>
-            </div>
-          <% end %>
+
+              <div class="dreams_text">
+                <%= dream.content %>
+              </div>
+
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
-</div>
