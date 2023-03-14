@@ -1,15 +1,14 @@
 // Specific CSS for your home-page
 .container-home {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
+  padding-block-start: 150px;
+  padding-left: 25px;
 }
 
-.bas-de-link {
- position: absolute;
- bottom: 5vh;
- width: 100%;
- font-size: 20px;
+#dreamer-intro {
+  --animate-duration: 5s;
 }

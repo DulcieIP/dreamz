@@ -1,11 +1,6 @@
 
 <%= render "shared/navbar" %>
 
-
-   <div class="d-flex justify-content-center">
-      <h1 class="title">My dreams</h1>
-  </div>
-
   <div class="dreams">
     <div class="dreams_content">
       <% @dreams.each do |dream| %>
@@ -13,11 +8,11 @@
           <div class="dreams_dream" data-dreams-target="dream">
             <%= link_to dream_path(dream), class:"text-decoration-none" do %>
               <div class="dreams_dream_image" >
-                  <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
+                <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
               </div>
 
               <div class="dreams_text">
-                <%= dream.content %>
+                <p> <%= dream.content %></p>
               </div>
 
             <% end %>

@@ -37,11 +37,16 @@
 }
 
 .dreams_text {
+  font-size: x-large;
   margin-top: 1.5vh;
-  padding: 5px;
-  color:white;
-  font-family: Montserrat;
+  padding-inline: 2vh;
+  color: white;
   text-align: justify;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-weight: 100;
 }
 
 .dreams_text_trunc:not(.active) {
@@ -95,9 +100,4 @@
 
 #selected_image img {
   width: 100%
-}
-
-.dreams_content_text {
-  color: white;
-  padding: 1vh;
 }
