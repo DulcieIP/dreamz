@@ -1,26 +1,22 @@
+<div class="d-flex justify-content-center">
+  <h1 class="fancy-text mt-4">Dream feed</h1>
+</div>
 
-<div class="main" >
-
-  <div class="d-flex justify-content-center">
-    <h1 class="fancy-text mt-4">Dream feed</h1>
-  </div>
-
-
-    <% @dreams.each do |dream| %>
-
-        <% if dream.scenes.first && dream.scenes.first.image.attached? %>
-
-              <%= link_to dream_path(dream), class:"text-decoration-none" do %>
-                <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top rounded-top" %>
-                <div class="slides_text">
-                  <% if dream.content? %>
-                    <p class=""><%= dream.content %></p>
-                  <% end %>
-                </div>
+<div class="grid">
+  <% @dreams.each do |dream| %>
+        <div class="imgcard">
+    <% if dream.scenes.first && dream.scenes.first.image.attached? %>
+          <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+            <%= cl_image_tag dream.scenes.first.image.key, crop: :fill %>
+            <div>
+              <% if dream.content? %>
+                <p><%= dream.content %></p>
               <% end %>
             </div>
-        <% end %>
-      </div>
+          <% end %>
     <% end %>
-
+        </div>
+  <% end %>
 </div>
+
+      <%# <%= link_to dream.user.username, user_dreamboard_path(dream.user), class: 'btn btn-primary' %>
