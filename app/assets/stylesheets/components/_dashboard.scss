@@ -78,7 +78,10 @@
 .dreams_dream_image_thumb img {
   height: 100%;
   object-fit: contain;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
+
 
 .dreams_content_thumb::-webkit-scrollbar {
   display: none

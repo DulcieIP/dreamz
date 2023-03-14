@@ -20,7 +20,7 @@
         <% @dream.scenes.each do |scene| %>
           <div class="dreams_dream-thumb" data-dream-target="dream" data-action="click->dream#selectImage">
             <div class="dreams_dream_image_thumb">
-              <%= cl_image_tag scene.image.key, effect: :grayscale %>
+              <%= cl_image_tag scene.image.key %>
             </div>
           </div>
         <% end %>
