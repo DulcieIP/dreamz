@@ -2,6 +2,8 @@
   <h1 class="fancy-text mt-4">Dream feed</h1>
 </div>
 
+<%= render "shared/navbar" %>
+
 <div class="grid">
     <% @dreams.each do |dream| %>
       <% if dream.scenes.first && dream.scenes.first.image.attached? %>
