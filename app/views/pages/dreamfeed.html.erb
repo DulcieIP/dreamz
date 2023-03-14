@@ -3,13 +3,13 @@
 </div>
 
 <div class="grid">
-  <% @dreams.each do |dream| %>
-    <% if dream.scenes.first && dream.scenes.first.image.attached? %>
-          <%= link_to dream_path(dream), class:"text-decoration-none" do %>
-            <div class="dreams_dreamfeed_image_thumb">
-            <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "card-img-top" %>
-            </div>
-          <% end %>
+    <% @dreams.each do |dream| %>
+      <% if dream.scenes.first && dream.scenes.first.image.attached? %>
+            <%= link_to dream_path(dream), class:"text-decoration-none" do %>
+              <div class="dreams_dreamfeed_image_thumb">
+              <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class: "imggrid" %>
+              </div>
+            <% end %>
+      <% end %>
     <% end %>
-  <% end %>
 </div>
