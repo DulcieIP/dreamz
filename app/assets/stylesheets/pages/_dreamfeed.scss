@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+}
+
+.imggrid {
+  width: 100%;
+}
+
+.dreams_dreamfeed_image_thumb img {
+  height: 100%;
+  object-fit: contain;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
