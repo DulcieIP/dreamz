@@ -54,7 +54,18 @@
   color: white;
   text-align: center;
   font-weight: 100;
+  overflow-y: scroll;
+  height: calc(100vh - 7vh - 100vw - 1.4rem - 34vw - 3.3rem);
 }
+
+.dreams_texte:not(.is-setting-scroll) {
+  scroll-behavior: smooth
+}
+
+.dreams_texte::-webkit-scrollbar {
+  display: none
+}
+
 
 .dreams_text_trunc:not(.active) {
   display: -webkit-box;
@@ -64,16 +75,22 @@
 }
 
 .dreams_content_thumb {
-  height: 15vh;
+
   position: relative;
   display: flex;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  margin-top: 1.5vh;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  &:last-child {
+    margin-right: 0 !important;
+  }
 }
 
 .dreams_dream-thumb {
   scroll-snap-align: start end;
+  width: fit-content;
+  margin-right: 0.7rem;
 }
 
 .dreams_dream_image_thumb {
@@ -81,8 +98,8 @@
   -o-object-fit: contain;
   object-fit: contain;
   color: transparent;
-  margin-right: 1.5vh;
-
+  aspect-ratio: 1/1;
+  width: 34vw;
 }
 
 .dreams_dream_image_thumb img {
@@ -90,6 +107,7 @@
   object-fit: contain;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
+  aspect-ratio: 1/1;
 }
 
 .dreams_content_thumb::-webkit-scrollbar {
