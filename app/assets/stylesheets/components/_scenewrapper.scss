@@ -7,7 +7,7 @@
 }
 
 .scene-wrapper-title {
-  height: 5rem;
+  height: 6rem !important;
 }
 .scene-wrapper {
   position:relative;
@@ -28,14 +28,14 @@
   transform: translateX(-50%);
 }
 
-.scene-selector + label {
-  cursor: pointer;
-  border: 2px solid #ffffff;
-}
+// .scene-selector + label {
+//   cursor: pointer;
+//   border: 2px solid #ffffff;
+// }
 
-.scene-selector:checked + label {
-  border: 2px solid #73ff88;
-}
+// .scene-selector:checked + label {
+//   border: 2px solid #73ff88;
+// }
 
 .scene-selector:checked + label i {
   color: #73ff88;

@@ -1,6 +1,6 @@
 <div class="container mb-5 scene-container">
 
-  <h2 class="pt-4 mx-auto text-center scene-wrapper-title">Select images to create your dream album</h2>
+  <h2 class="pt-4 mx-auto text-center scene-wrapper-title">Select images to create your album</h2>
   <div class="scene-wrapper-form">
     <%= simple_form_for(@dream, url: filtered_scene_dream_path(@dream), method: :patch) do |f|%>
       <%= f.input :scenes, collection: @scenes, as: :check_boxes,
@@ -13,7 +13,7 @@
 
       <%# est-il possible de faire apparaître le submit uniquement si une image est cochée ? %>
 
-        <%= f.submit "Save my dream", class: 'dreambtn displayed mb-2 scene-wrapper-submit' %>
+        <%= f.submit "Save", class: 'dreambtn btn-start displayed mb-2 scene-wrapper-submit' %>
     <% end %>
   </div>
 </div>
