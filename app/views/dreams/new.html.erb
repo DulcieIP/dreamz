@@ -3,15 +3,23 @@
 <div data-controller="hiddenloading">
   <div data-hiddenloading-target="form">
     <div class="container">
-      <div class="mt-5 container-form align-items-center d-flex flex-column">
+      <div class="mt-5 align-items-center d-flex flex-column">
         <%= simple_form_for(@dream, html: {data: { action: "submit->hiddenloading#show"}}) do |f| %>
-          <div class="position-relative">
-            <%= f.input :content, as: :text, label: false, placeholder: "White horses were standing...  " %>
-            <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"></i>
-          </div>
+          <div data-controller="character-counter countermax">
+            <div class="position-relative">
+              <%= f.input :content,
+                wrapper_html: { class: "mb-1" },
+                input_html: {autofocus: true, data: { action: "input->countermax#check", character_counter_target: "input" } },
+                label_html: { class: "form-label text-secondary fw-bold" }, as: :text, label: false, placeholder: "White horses were standing...  "%>
+                <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"data-controller="popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" title="Tips to get better results" data-bs-content="In order to get better results we recommand to..."></i>
+            </div>
+          <p class="character-counter"><span data-character-counter-target="counter"></span>/250</p>
+      </div>
+    </div>
           <button type="submit" name="commit" class="custom-btn btn-6 displayed" data-disable-with="Create Dream">
           </button>
         <% end %>
+
 
 
   <div class="hiddenloading d-none" data-hiddenloading-target="loading">
