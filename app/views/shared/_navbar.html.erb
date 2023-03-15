@@ -1,9 +1,9 @@
 <div class="nav-wrapper" data-controller="toggle-element">
-  <div class="navblock">
-    <div class="dots">
+  <div class="navblock d-flex justify-content-between p-3">
+    <div class="dots d-flex flex-column justify-content-center">
         <i class="fa-solid fa-ellipsis" data-action="click->toggle-element#toggle turbo:before-cache@window->toggle-element#close"></i>
     </div>
-    <div class="logo">
+    <div class="logo d-flex flex-column justify-content-center">
       <%= link_to dreamboard_path do %>
       <%= image_tag "logo-home.png", style:"width: 40px;"%>
       <% end %>
@@ -20,6 +20,6 @@
       <%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </nav>
 
-    <label for="menu-control" class="sidebar__close"></label>
+    <label for="menu-control" class="sidebar__close" data-action="click->toggle-element#close"></label>
   </aside>
 </div>
