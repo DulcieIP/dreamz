@@ -2,14 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="countermax"
 export default class extends Controller {
-  check(event) {
+  static targets = ["counter", "input"]
 
-    var str = event.currentTarget.innerText;
-    console.log(str.length);
-    // if str.length >= 250
-    //   this.currentTarget.classList.add("red");
+  check() {
 
-
+    if (this.inputTarget.value.length > 250){
+      this.counterTarget.classList.add("red")
+    } else {
+      this.counterTarget.classList.remove("red")
+    }
   }
 
 }
