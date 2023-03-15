@@ -23,15 +23,21 @@
   color: red;
 }
 
+
 .character-counter {
   font-size: 15px;
   color: #acaaaa;
 }
 
 .popover {
-border-radius: 10px;
+border-radius: 15px;
+white-space:pre-line;
+--bs-popover-max-width: 19em;
+--bs-popover-bg: #ece8e8;
+--bs-popover-font-size: 0.800rem;
 }
 
 .popover-header {
 color: black;
+background-color: transparent;
 }

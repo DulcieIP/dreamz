@@ -11,10 +11,22 @@
                 wrapper_html: { class: "mb-1" },
                 input_html: {autofocus: true, data: { action: "keyup->countermax#check", character_counter_target: "input",
                 countermax_target: "input" } },
-                label_html: { class: "form-label text-secondary fw-bold" }, as: :text, label: false, placeholder: "White horses were standing...  "
-              %>
+                label_html: { class: "form-label text-secondary fw-bold" }, as: :text, label: false, placeholder: "White horses were standing...  "%>
 
-              <i class="popover-text fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"data-controller="popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" title="Tips to get better results" data-bs-content="In order to get better results we recommand to..."></i>
+                <i class="fa-solid fa-circle-info position-absolute bottom-0   end-0 p-3"
+                  data-controller="popover"
+                  data-bs-toggle="popover"
+                  data-bs-trigger="hover"
+                  data-html="true"
+                  data-bs-placement="right"
+                  title="Tips and best practice"
+                  data-bs-content="Reminder: You can't use more than 250 char.
+
+                  - Write short sentences, and use commas.
+                  - Make sure to describe precisely your dream with basic elements : place, time of the day, characters involved etc.
+                  - Avoid using 'I'. ex: 'I was in the middle of the desert'. You might write 'A men/women/child in the middle of the desert' instead.
+                  - In the same way don't use specific terms such as 'My mom' or 'My brother'.">
+                </i>
 
             </div>
             <p class="character-counter"><span data-countermax-target="counter" data-character-counter-target="counter"></span>/250</p>
