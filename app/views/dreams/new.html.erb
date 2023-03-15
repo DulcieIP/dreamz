@@ -7,7 +7,7 @@
         <%= simple_form_for(@dream, html: {data: { action: "submit->hiddenloading#show"}}) do |f| %>
           <div class="position-relative">
             <%= f.input :content, as: :text, label: "250 words max.", placeholder: "White horses were standing...  ", input_html: {autofocus: true}%>
-            <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"></i>
+            <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"data-controller="popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" title="Tips to get better results" data-bs-content="In order to get better results we recommand to..."></i>
           </div>
           <button type="submit" name="commit" class="custom-btn btn-6 displayed" data-disable-with="Create Dream">
           </button>

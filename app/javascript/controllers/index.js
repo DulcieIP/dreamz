@@ -22,6 +22,8 @@ application.register("hiddenloading", HiddenloadingController)
 import HomepageController from "./homepage_controller"
 application.register("homepage", HomepageController)
 
+import PopoverController from "./popover_controller"
+application.register("popover", PopoverController)
+
 import ToggleElementController from "./toggle_element_controller"
 application.register("toggle-element", ToggleElementController)
-
