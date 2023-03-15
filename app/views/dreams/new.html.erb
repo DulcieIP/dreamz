@@ -14,17 +14,20 @@
                 <i class="fa-solid fa-circle-info position-absolute bottom-0 end-0 p-3"data-controller="popover" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-placement="right" title="Tips to get better results" data-bs-content="In order to get better results we recommand to..."></i>
             </div>
           <p class="character-counter"><span data-character-counter-target="counter"></span>/250</p>
-      </div>
-    </div>
+          </div>
+
           <button type="submit" name="commit" class="custom-btn btn-6 displayed" data-disable-with="Create Dream">
           </button>
         <% end %>
+      </div>
+    </div>
+  </div>
 
 
 
   <div class="hiddenloading d-none" data-hiddenloading-target="loading">
     <%# Quantity should be the same in Sass %>
-    <% quantity = 14 %>
+    <% quantity = 100 %>
     <% for i in 1..quantity do %>
       <div class="firefly"></div>
     <% end %>
