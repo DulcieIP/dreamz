@@ -25,10 +25,10 @@
   <%# dream.content %>
 
   <div class="dreams_texte">
-    <p> <%= @dream.content %></p>
+    <p id="dream-text"> <%= @dream.content %></p>
   </div>
 
   <div class="dreamboard-footer d-flex justify-content-center">
-    <%= link_to "<i class='fa-solid fa-right-left'></i>".html_safe, :back %>
+    <%= link_to "<i id='fleches-show' class='fa-solid fa-right-left'></i>".html_safe, :back %>
   </div>
 </div>
