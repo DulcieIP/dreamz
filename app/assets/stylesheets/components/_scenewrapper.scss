@@ -1,6 +1,31 @@
+.scene-container {
+  overflow: auto;
+}
+
+.scenes {
+
+}
+
+.scene-wrapper-title {
+  height: 5rem;
+}
 .scene-wrapper {
   position:relative;
   padding:0px;
+  overflow: auto;
+}
+
+.scene-wrapper-form {
+  height: calc(100vh - 5rem);
+  overflow: auto;
+  position: relative;
+}
+
+.scene-wrapper-submit {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .scene-selector + label {

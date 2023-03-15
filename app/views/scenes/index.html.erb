@@ -1,7 +1,7 @@
-<div class="container mb-5">
+<div class="container mb-5 scene-container">
 
-<h3 class="pt-4 mx-auto text-center fancy-text">Choose the images that best describe your dream</h3>
-
+  <h3 class="pt-4 mx-auto text-center fancy-text scene-wrapper-title">Choose the images that best describe your dream</h3>
+  <div class="scene-wrapper-form">
     <%= simple_form_for(@dream, url: filtered_scene_dream_path(@dream), method: :patch) do |f|%>
       <%= f.input :scenes, collection: @scenes, as: :check_boxes,
           collection_wrapper_tag: 'div',
@@ -12,6 +12,8 @@
           label_method: lambda { |b| "<i class='fa-regular fa-circle-check'></i>".html_safe + cl_image_tag(b.image.key) } %>
 
       <%# est-il possible de faire apparaître le submit uniquement si une image est cochée ? %>
-      <%= f.submit "Save my dream", class: 'btn-ghost displayed mb-2' %>
+
+        <%= f.submit "Save my dream", class: 'btn-ghost displayed mb-2 scene-wrapper-submit' %>
     <% end %>
+  </div>
 </div>
