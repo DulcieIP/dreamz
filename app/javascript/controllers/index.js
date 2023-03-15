@@ -7,6 +7,9 @@ import { application } from "./application"
 import CheckedIconController from "./checked_icon_controller"
 application.register("checked-icon", CheckedIconController)
 
+import CountermaxController from "./countermax_controller"
+application.register("countermax", CountermaxController)
+
 import DreamController from "./dream_controller"
 application.register("dream", DreamController)
 
