@@ -46,7 +46,7 @@ class DreamsController < ApplicationController
     request = client.chat(
       parameters: {
           model: "gpt-3.5-turbo",
-          messages: [{ role: "user", content: "if you can, split this text in paragraph without adding any word to it. if you can't just re-write the text without any change: '#{prompt}' ", }],
+          messages: [{ role: "user", content: "if you can, split this text in paragraph without adding any word to it, if you cant just write the exact same text : '#{prompt}' ", }],
           temperature: 0
       }
     )
@@ -54,16 +54,16 @@ class DreamsController < ApplicationController
     paragraphs = chatgpt_response.strip.split("\n\n")
     paragraphs.each_with_index do |paragraph, index|
       if paragraphs[0] == paragraph
-      response = client.images.generate(parameters: { prompt: "#{paragraph} , hd,  photorealism, sigma 50mm",
-      size: "256x256",
-      n: 1 }
-      )
+        response = client.images.generate(parameters: { prompt: "#{paragraph},photography, Nikon, Canon, hd, 4k.",
+        size: "512x512",
+        n: 1 }
+        )
       else
-      new_paragraph = paragraphs[0..index].join(",")
-      response = client.images.generate(parameters: { prompt: "#{new_paragraph} ,hd , photorealism, sigma 50mm",
-      size: "256x256",
-      n: 1 }
-      )
+        new_paragraph = paragraphs[0..index].join(",")
+        response = client.images.generate(parameters: { prompt: "#{new_paragraph},photography, Nikon, Canon, hd, 4k.",
+        size: "512x512",
+        n: 1 }
+        )
       end
       image_url = response.dig("data", 0, "url")
       scene = Scene.new(content: paragraph, dream: @dream, image_url: image_url)
