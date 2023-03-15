@@ -27,8 +27,12 @@ class DreamsController < ApplicationController
     @dream.user = current_user
 
     if @dream.save
-      openai_request
-      redirect_to dream_scenes_path(@dream)
+      if openai_request
+        redirect_to dream_scenes_path(@dream)
+      else
+        @dream.destroy
+        render :new, status: :unprocessable_entity, alert: "Please try again"
+      end
     else
       render :new, status: :unprocessable_entity, alert: "Please try again"
     end
@@ -51,16 +55,17 @@ class DreamsController < ApplicationController
       }
     )
     chatgpt_response = request.dig("choices", 0, "message", "content")
+    return false if chatgpt_response.nil?
     paragraphs = chatgpt_response.strip.split("\n\n")
     paragraphs.each_with_index do |paragraph, index|
       if paragraphs[0] == paragraph
-        response = client.images.generate(parameters: { prompt: "#{paragraph},photography, Nikon, Canon, hd, 4k.",
+        response = client.images.generate(parameters: { prompt: "#{paragraph}, as a photography, Nikon, Canon, hd, 4k.",
         size: "512x512",
         n: 1 }
         )
       else
         new_paragraph = paragraphs[0..index].join(",")
-        response = client.images.generate(parameters: { prompt: "#{new_paragraph},photography, Nikon, Canon, hd, 4k.",
+        response = client.images.generate(parameters: { prompt: "#{new_paragraph},as a photography, Nikon, Canon, hd, 4k.",
         size: "512x512",
         n: 1 }
         )
@@ -75,6 +80,7 @@ class DreamsController < ApplicationController
 
 
     end
+    true
   end
 
   def dream_params
