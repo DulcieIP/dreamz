@@ -11,7 +11,7 @@
         </div>
         <div class="big-image d-none" data-dreamfeed-target="showbigimage" data-action="click->dreamfeed#closeimage turbo:before-cache@window->dreamfeed#close">
           <%= link_to dream_path(dream) do %>
-            <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class:"img100" %>
+            <%= cl_image_tag dream.scenes.first.image.key, crop: :fill, class:"img100", width:390, height:390 %>
           <% end %>
         </div>
       </div>
