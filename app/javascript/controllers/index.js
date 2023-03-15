@@ -7,6 +7,9 @@ import { application } from "./application"
 import CheckedIconController from "./checked_icon_controller"
 application.register("checked-icon", CheckedIconController)
 
+import CountermaxController from "./countermax_controller"
+application.register("countermax", CountermaxController)
+
 import DreamController from "./dream_controller"
 application.register("dream", DreamController)
 
@@ -22,6 +25,8 @@ application.register("hiddenloading", HiddenloadingController)
 import HomepageController from "./homepage_controller"
 application.register("homepage", HomepageController)
 
+import PopoverController from "./popover_controller"
+application.register("popover", PopoverController)
+
 import ToggleElementController from "./toggle_element_controller"
 application.register("toggle-element", ToggleElementController)
-
