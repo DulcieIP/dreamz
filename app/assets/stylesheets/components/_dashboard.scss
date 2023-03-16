@@ -9,6 +9,7 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  height: 93vh;
 }
 
 .dreams_content:not(.is-setting-scroll) {
@@ -24,7 +25,7 @@
   width: 92%;
   height: 100%;
   scroll-snap-align: start;
-  margin-bottom: 3vh
+  margin-bottom: 3vh;
 }
 
 .dreams_dream_image {
