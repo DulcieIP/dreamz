@@ -4,7 +4,7 @@ import { visit } from "@hotwired/turbo"
 
 // Connects to data-controller="homepage"
 export default class extends Controller {
-  static targets = ["title", "message", "audio"]
+  static targets = ["title", "message", "music"]
 
   hide() {
     if (this.titleTarget.classList.contains("animate__fadeIn")) {
@@ -12,8 +12,8 @@ export default class extends Controller {
       this.titleTarget.classList.add("d-none");
 
       this.messageTarget.classList.remove("d-none");
-      
 
+      this.musicTarget.play()
 
       new Typed(this.messageTarget, {
           strings: ['Tell me about ^300 <br>your dream...'],
