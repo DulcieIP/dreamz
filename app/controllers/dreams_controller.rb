@@ -57,19 +57,28 @@ class DreamsController < ApplicationController
     chatgpt_response = request.dig("choices", 0, "message", "content")
     return false if chatgpt_response.nil?
     paragraphs = chatgpt_response.strip.split("\n\n")
+    paragraphs *= 3 if paragraphs.size == 1
     paragraphs.each_with_index do |paragraph, index|
-      if paragraphs[0] == paragraph
-        response = client.images.generate(parameters: { prompt: "#{paragraph}, as a photography, Nikon, Canon, hd, 4k.",
-        size: "512x512",
-        n: 1 }
-        )
+      if paragraphs[0] != paragraphs[1]
+        if paragraphs[0] == paragraph
+          response = client.images.generate(parameters: { prompt: "a photograph of #{paragraph}, hd, 4k.",
+          size: "512x512",
+          n: 1 }
+          )
+        else
+          new_paragraph = paragraphs[0..index].join(",")
+          response = client.images.generate(parameters: { prompt: "a photograph of #{new_paragraph}, hd, 4k.",
+          size: "512x512",
+          n: 1 }
+          )
+        end
       else
-        new_paragraph = paragraphs[0..index].join(",")
-        response = client.images.generate(parameters: { prompt: "#{new_paragraph},as a photography, Nikon, Canon, hd, 4k.",
-        size: "512x512",
-        n: 1 }
-        )
+        response = client.images.generate(parameters: { prompt: "a photograph of #{paragraph}, hd, 4k.",
+          size: "512x512",
+          n: 1 }
+          )
       end
+
       image_url = response.dig("data", 0, "url")
       scene = Scene.new(content: paragraph, dream: @dream, image_url: image_url)
       file = URI.open(image_url)
