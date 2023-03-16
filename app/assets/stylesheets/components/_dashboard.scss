@@ -49,9 +49,8 @@
 }
 
 .dreams_title {
-  font-size: x-large;
-  margin-top: 1.5vh;
-  padding-inline: 4vh;
+  font-size: 1.5rem;
+  padding: 0.9em 1.5em;
   color: white;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -59,6 +58,7 @@
   overflow: hidden;
   font-weight: 100;
   text-align: center;
+  height: 4.1em;
 }
 
 .dreams_texte {
