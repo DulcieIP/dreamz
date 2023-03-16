@@ -1,6 +1,6 @@
 <div class="container mb-5 scene-container">
 
-  <h2 class="pt-4 mx-auto text-center scene-wrapper-title">Select images to create your album</h2>
+  <h2 class="pt-4 mx-auto text-center scene-wrapper-title">Select images</h2>
   <div class="scene-wrapper-form">
     <%= simple_form_for(@dream, url: filtered_scene_dream_path(@dream), method: :patch) do |f|%>
       <%= f.input :scenes, collection: @scenes, as: :check_boxes,

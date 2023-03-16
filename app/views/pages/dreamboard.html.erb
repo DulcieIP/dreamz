@@ -14,9 +14,19 @@
               <div class="dreams_title">
                 <p id="excerpt"> <%= dream.content %></p>
               </div>
-
-            <% end %>
+<div class="d-flex justify-content-center ml-4">
+          <div class="btn-delete">
+                <% if dream.user == current_user%>
+                <%= link_to "",
+                          dream_path(dream),
+                          class: "fa-regular fa-trash-can",
+                          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+                        %>
+                <% end %>
           </div>
+</div>
+              </div>
+            <% end %>
         <% end %>
       <% end %>
     </div>

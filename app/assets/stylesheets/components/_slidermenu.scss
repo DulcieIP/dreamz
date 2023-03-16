@@ -11,7 +11,9 @@
 
 .navblock {
   height: 7vh;
-
+  // overflow: hidden;
+  // position: fixed;
+  // top: 0;
 }
 
 // .logo {
@@ -42,6 +44,7 @@
 .sidebar {
   height: calc(100vw + 1rem);
   width: 100vw;
+  height: 100vh;
   background: #04052E;
   position: absolute;
   top: 0;
