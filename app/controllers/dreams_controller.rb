@@ -42,6 +42,12 @@ class DreamsController < ApplicationController
     @dream = Dream.find(params[:id])
   end
 
+  def destroy
+    @dream = Dream.find(params[:id])
+    @dream.destroy
+    redirect_to dreamboard_url, notice: "dream was successfully destroyed."
+  end
+
   private
 
   def openai_request
@@ -61,19 +67,19 @@ class DreamsController < ApplicationController
     paragraphs.each_with_index do |paragraph, index|
       if paragraphs[0] != paragraphs[1]
         if paragraphs[0] == paragraph
-          response = client.images.generate(parameters: { prompt: "a photograph of #{paragraph}, hd, 4k.",
+          response = client.images.generate(parameters: { prompt: "photography of #{paragraph},kodachrome, fujifilm, hd, 4k.",
           size: "512x512",
           n: 1 }
           )
         else
           new_paragraph = paragraphs[0..index].join(",")
-          response = client.images.generate(parameters: { prompt: "a photograph of #{new_paragraph}, hd, 4k.",
+          response = client.images.generate(parameters: { prompt: "photography of #{new_paragraph},kodachrome, fujifilm, hd, 4k.",
           size: "512x512",
           n: 1 }
           )
         end
       else
-        response = client.images.generate(parameters: { prompt: "a photograph of #{paragraph}, hd, 4k.",
+        response = client.images.generate(parameters: { prompt: "photography of #{paragraph},kodachrome, fujifilm, hd, 4k.",
           size: "512x512",
           n: 1 }
           )
