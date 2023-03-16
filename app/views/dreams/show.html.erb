@@ -31,12 +31,4 @@
   <div class="dreamboard-footer d-flex justify-content-center">
     <%= link_to "<i id='fleches-show' class='fa-solid fa-xmark'></i>".html_safe, :back %>
   </div>
-
-  <% if @dream.user == current_user%>
-  <%= link_to "Delete",
-            dream_path(@dream),
-            class: "btn-classic",
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-          %>
-  <% end %>
 </div>

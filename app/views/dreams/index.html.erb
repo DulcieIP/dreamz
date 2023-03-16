@@ -1,4 +1,13 @@
 <h1>My profile</h1>
 <% @dreams.each do |dream| %>
   <%= cl_image_tag dream.image.key, class:"w-100 h-100", height:600, width:600, crop: :fill %>
+  <div class="btn-delete">
+  <% if @dream.user == current_user%>
+  <%= link_to "",
+            dream_path(@dream),
+            class: "btn-classic fa-regular fa-trash-can",
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+  <% end %>
+  </div>
 <% end %>
