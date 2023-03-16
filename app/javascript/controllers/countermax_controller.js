@@ -6,7 +6,7 @@ export default class extends Controller {
 
   check() {
 
-    if (this.inputTarget.value.length > 250){
+    if (this.inputTarget.value.length > 400){
       this.counterTarget.classList.add("red")
     } else {
       this.counterTarget.classList.remove("red")

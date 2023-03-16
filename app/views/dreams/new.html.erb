@@ -3,38 +3,41 @@
 
 <div data-controller="hiddenloading" class="animate__animated animate__fadeIn animate__slower	">
   <div data-hiddenloading-target="form">
-    <div class="container ">
+    <div class="container position-relative">
       <div class="mt-5 align-items-center d-flex flex-column">
         <%= simple_form_for(@dream, html: {data: { action: "submit->hiddenloading#show"}}) do |f| %>
-          <div data-controller="character-counter countermax">
-            <div class="position-relative">
+          <div data-controller="character-counter countermax mb-1">
+            <div>
               <%= f.input :content,
                 wrapper_html: { class: "mb-1" },
                 input_html: {autofocus: true, data: { action: "keyup->countermax#check", character_counter_target: "input",
                 countermax_target: "input" } },
-                label_html: { class: "form-label text-secondary fw-bold" }, as: :text, label: false, placeholder: "White horses, on a sunny day...  "
+                label_html: { class: "form-label text-secondary fw-bold" }, as: :text, label: false, placeholder: "Dozens of white horses, in a field...  "
               %>
 
-              <i class="fa-solid fa-circle-info position-absolute bottom-0   end-0 p-3"
+            </div>
+            <p class="character-counter"><span data-countermax-target="counter" data-character-counter-target="counter"></span>/400
+              <i class="fa-solid fa-circle-info bottom-0"
                 data-controller="popover"
                 data-bs-toggle="popover"
                 data-bs-trigger="hover"
                 data-html="true"
                 data-bs-placement="right"
                 title="Tips and best practice"
-                data-bs-content="Reminder: You can't use more than 250 char.
+                data-bs-content="Reminder: You can't use more than 400 char.
 
+                - Avoid Being Too Vague
                 - Write short sentences, and use commas.
                 - Make sure to describe precisely your dream with basic elements : place, time of the day, characters involved etc.
+                Favor Singular Nouns Or Specific Numbers
+                - You should avoid using negative terms and simply state exactly what you want regarding colors, materials, and shapes.
                 - Avoid using 'I'. ex: 'I was in the middle of the desert'. You might write 'A men/women/child in the middle of the desert' instead.
                 - In the same way don't use specific terms such as 'My mom' or 'My brother'.">
-
               </i>
-            </div>
-            <p class="character-counter"><span data-countermax-target="counter" data-character-counter-target="counter"></span>/250</p>
+            </p>
           </div>
 
-          <div class="pulse-container d-flex justify-content-center">
+          <div class="pulse-container d-flex justify-content-center mt-4">
             <button type="submit" name="commit" class="pulse-button" data-disable-with="Create Dream">
             </button>
           </div>
