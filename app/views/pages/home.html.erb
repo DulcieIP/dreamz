@@ -1,8 +1,11 @@
+
+
 <div class="container" data-controller="homepage" data-action="click->homepage#hide">
   <div id="dreamer-intro" class="container-home">
     <div data-homepage-target="title" class="animate__animated animate__fadeIn ">
       <h1>Dreamer</h1>
     </div>
+    <%= audio_tag("Intro.mp3", type: "audio/mpeg", 'data-homepage-target': "music") %>
     <h1><span class="d-none" data-homepage-target="message"></span></h1>
   </div>
 </div>
