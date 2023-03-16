@@ -11,8 +11,6 @@
           input_html: {class: 'scene-selector d-none'},
           label_method: lambda { |b| "<i class='fa-regular fa-circle-check'></i>".html_safe + cl_image_tag(b.image.key) } %>
 
-      <%# est-il possible de faire apparaître le submit uniquement si une image est cochée ? %>
-
         <%= f.submit "Save", class: 'dreambtn btn-start displayed mb-2 scene-wrapper-submit' %>
     <% end %>
   </div>
