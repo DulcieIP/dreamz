@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="checked-icon"
 export default class extends Controller {
   connect() {
-    console.log("coucou");
+    console.log("coucou from checked_icon controller");
 
     const labels = document.querySelectorAll('.scene-wrapper label');
 
