@@ -5,11 +5,12 @@ $quantity: 75
   position: fixed
   left: 50%
   top: 50%
-  width: 3vw
-  height: 3vw
+  width: 5vw
+  height: 5vw
   margin: -0.2vw 0 0 9.8vw
   animation: ease 200s alternate infinite
   pointer-events: none
+
 
   &::before,
   &::after
@@ -28,7 +29,7 @@ $quantity: 75
   &::after
     background: white
     opacity: 0
-    box-shadow: 0 0 5vw 5vw yellow
+    box-shadow: 0 0 0vw 0vw yellow
     animation: drift ease alternate infinite, flash ease infinite
 
 
@@ -46,7 +47,7 @@ $quantity: 75
 
     &::after
       animation-duration: #{$rotationSpeed}, random(6000) + 5000ms
-      animation-delay: 0ms, random(1000) + 500ms
+      animation-delay: 0ms, random(8000) + 500ms
 
   @keyframes move#{$i}
     @for $step from 0 through $steps
@@ -60,9 +61,9 @@ $quantity: 75
     transform: rotate(360deg)
 
 @keyframes flash
-  0%, 50%, 100%
+  0%, 30%, 100%
     opacity: 0
-    box-shadow: 0 0 0vw 0vw yellow
+    box-shadow: 0 0 0vw 0vw white
   5%
     opacity: 1
-    box-shadow: 0 0 1vw 0.4vw yellow
+    box-shadow: 0 0 2vw 0.4vw white
