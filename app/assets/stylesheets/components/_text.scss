@@ -1,8 +1,6 @@
 .page-body {
   font-family: $body-font;
   color: white;
-  // background-color: rgb(6, 6, 80);
-
 }
 
 .title {
@@ -39,29 +37,29 @@ a {
 
 
 
-@mixin fancy-text($gradient) {
-  @keyframes fancy {
-    from {
-      background-position: 0% 50%;
-    }
-    to {
-      background-position: -200% 50%;
-    }
-  }
-  background: $gradient;
-  background-size: 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  color: rgba(0, 0, 0, 0);
-  animation: fancy 3s infinite linear;
-}
+// @mixin fancy-text($gradient) {
+//   @keyframes fancy {
+//     from {
+//       background-position: 0% 50%;
+//     }
+//     to {
+//       background-position: -200% 50%;
+//     }
+//   }
+//   background: $gradient;
+//   background-size: 200%;
+//   background-clip: text;
+//   -webkit-background-clip: text;
+//   box-decoration-break: clone;
+//   -webkit-box-decoration-break: clone;
+//   color: rgba(0, 0, 0, 0);
+//   animation: fancy 3s infinite linear;
+// }
 
-.fancy-text {
-  @include fancy-text(linear-gradient(to right, #67e9c0, #8360c3, #51edc6));
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
+// .fancy-text {
+//   @include fancy-text(linear-gradient(to right, #67e9c0, #8360c3, #51edc6));
+//   text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+// }
 
 /* Basic styles */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
@@ -75,11 +73,11 @@ p {
 }
 
 
-.centre{
-  text-align: center;
-}
+// .centre{
+//   text-align: center;
+// }
 
-.goback {
-  position:relative;
-  margin: 30px;
-}
+// .goback {
+//   position:relative;
+//   margin: 30px;
+// }

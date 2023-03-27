@@ -12,21 +12,4 @@
 @import "pages/index";
 
 
-// c'est PaulP qui a dit de mettre là
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-// html {
-//   overscroll-behavior: none;
-//   overflow: hidden;
-//   height: 100%;
-// }
-
-body {
-  height: 100%;
-}
+// c'est PaulP qui a dit de mettre là mais du coup j'ai nettoyé
